@@ -18,10 +18,10 @@ export function Hero() {
   const my = useMotionValue(0)
   const sx = useSpring(mx, { stiffness: 65, damping: 18 })
   const sy = useSpring(my, { stiffness: 65, damping: 18 })
-  const rotateX = useTransform(sy, [-28, 28], [2.8, -2.8])
-  const rotateY = useTransform(sx, [-28, 28], [-4, 4])
-  const sceneX = useTransform(sx, [-28, 28], [-16, 16])
-  const sceneY = useTransform(sy, [-28, 28], [12, -12])
+  const rotateX = useTransform(sy, [-28, 28], [1.8, -1.8])
+  const rotateY = useTransform(sx, [-28, 28], [-2.5, 2.5])
+  const sceneX = useTransform(sx, [-28, 28], [-12, 12])
+  const sceneY = useTransform(sy, [-28, 28], [10, -10])
 
   const onMove = (e: MouseEvent) => {
     if (reduce || !ref.current) return
@@ -41,31 +41,58 @@ export function Hero() {
       }}
       className="mesh-hero relative min-h-[100svh] overflow-hidden text-white"
     >
-      <div className="grid-fade pointer-events-none absolute inset-0 opacity-80" aria-hidden />
-      <div className="pointer-events-none absolute inset-0 aurora opacity-60" aria-hidden />
+      <div className="grid-fade pointer-events-none absolute inset-0 opacity-70" aria-hidden />
+      <div className="pointer-events-none absolute inset-0 aurora opacity-50" aria-hidden />
       <div className="noise-overlay absolute inset-0" aria-hidden />
 
-      {/* soft light beams */}
+      {/* Full-viewport 3D stage */}
       <motion.div
+        className="pointer-events-none absolute inset-0 z-[1]"
+        style={reduce ? undefined : { x: sceneX, y: sceneY }}
+        initial={reduce ? false : { opacity: 0, scale: 0.96 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 1.2, delay: 0.1, ease: easeOut }}
         aria-hidden
-        className="pointer-events-none absolute -left-20 top-24 h-[28rem] w-[28rem] rounded-full bg-accent/15 blur-[100px]"
-        animate={reduce ? undefined : { opacity: [0.35, 0.65, 0.35], scale: [1, 1.08, 1] }}
-        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+      >
+        {reduce ? (
+          <div className="absolute inset-0 flex items-center justify-center lg:justify-end lg:pr-[12%]">
+            <div className="relative h-[min(58vw,420px)] w-[min(58vw,420px)]">
+              <div className="absolute inset-0 rounded-full bg-[radial-gradient(circle_at_30%_25%,#00e5ff,#6c63ff_48%,#050816_78%)] opacity-90 shadow-[0_0_120px_rgba(0,229,255,0.45)]" />
+              <div className="absolute -inset-8 rounded-full border border-accent/30" />
+              <div className="absolute -inset-16 rounded-full border border-steel/25" />
+            </div>
+          </div>
+        ) : (
+          <Suspense fallback={null}>
+            <HeroScene reduceMotion={false} />
+          </Suspense>
+        )}
+      </motion.div>
+
+      {/* Soft scrim so copy stays readable over the sculpture */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 z-[2] bg-[linear-gradient(90deg,rgba(5,8,22,0.82)_0%,rgba(5,8,22,0.55)_38%,rgba(5,8,22,0.12)_62%,transparent_78%)]"
       />
-      <motion.div
+      <div
         aria-hidden
-        className="pointer-events-none absolute -right-24 bottom-10 h-[32rem] w-[32rem] rounded-full bg-steel/20 blur-[110px]"
-        animate={reduce ? undefined : { opacity: [0.3, 0.55, 0.3], x: [0, -24, 0] }}
-        transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+        className="pointer-events-none absolute inset-x-0 bottom-0 z-[2] h-40 bg-gradient-to-t from-canvas/80 to-transparent"
       />
 
       <motion.div
-        className="section-pad relative mx-auto grid min-h-[100svh] max-w-7xl items-center gap-8 pb-20 pt-28 lg:grid-cols-[minmax(0,0.92fr)_minmax(0,1.35fr)] lg:gap-2 lg:pb-24 lg:pt-24 xl:max-w-[88rem]"
+        aria-hidden
+        className="pointer-events-none absolute -left-20 top-24 z-[2] h-[28rem] w-[28rem] rounded-full bg-accent/12 blur-[100px]"
+        animate={reduce ? undefined : { opacity: [0.3, 0.55, 0.3], scale: [1, 1.08, 1] }}
+        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+      />
+
+      <motion.div
+        className="section-pad relative z-10 mx-auto flex min-h-[100svh] max-w-7xl items-center pb-24 pt-28"
         style={reduce ? undefined : { rotateX, rotateY, transformPerspective: 1500 }}
       >
-        <div className="relative z-20 max-w-xl lg:pr-6">
+        <div className="relative max-w-xl">
           <motion.div
-            className="inline-flex items-center gap-2 rounded-full border border-accent/25 bg-accent/10 px-3.5 py-1.5"
+            className="inline-flex items-center gap-2 rounded-full border border-accent/25 bg-accent/10 px-3.5 py-1.5 backdrop-blur-md"
             initial={reduce ? false : { opacity: 0, y: 10, filter: "blur(6px)" }}
             animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
             transition={{ duration: 0.85, ease: easeOut }}
@@ -155,46 +182,10 @@ export function Hero() {
             </motion.div>
           </motion.div>
         </div>
-
-        <motion.div
-          className="relative z-0 isolate lg:-mr-8 lg:translate-x-4 xl:-mr-16 xl:translate-x-8"
-          style={reduce ? undefined : { x: sceneX, y: sceneY }}
-          initial={reduce ? false : { opacity: 0, scale: 0.92 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1.15, delay: 0.18, ease: easeOut }}
-        >
-          {/* framing ring behind sculpture */}
-          <div
-            aria-hidden
-            className="pointer-events-none absolute left-1/2 top-1/2 h-[78%] w-[78%] -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/[0.06]"
-          />
-          <div
-            aria-hidden
-            className="pointer-events-none absolute left-1/2 top-1/2 h-[92%] w-[92%] -translate-x-1/2 -translate-y-1/2 rounded-full border border-accent/10"
-          />
-
-          {reduce ? (
-            <div className="mx-auto flex h-[min(56vh,460px)] max-w-md items-center justify-center lg:max-w-none lg:h-[min(72vh,640px)]">
-              <div className="relative h-52 w-52 lg:h-72 lg:w-72">
-                <div className="absolute inset-0 rounded-full bg-[radial-gradient(circle_at_30%_25%,#00e5ff,#6c63ff_48%,#050816_78%)] opacity-90 shadow-[0_0_100px_rgba(0,229,255,0.4)]" />
-                <div className="absolute -inset-6 rounded-full border border-accent/30" />
-                <div className="absolute -inset-12 rounded-full border border-steel/25" />
-              </div>
-            </div>
-          ) : (
-            <Suspense
-              fallback={
-                <div className="mx-auto h-[min(64vh,560px)] w-full animate-pulse rounded-full bg-white/[0.03] lg:h-[min(82vh,760px)]" />
-              }
-            >
-              <HeroScene reduceMotion={false} />
-            </Suspense>
-          )}
-        </motion.div>
       </motion.div>
 
       <motion.div
-        className="pointer-events-none absolute inset-x-0 bottom-7 flex justify-center"
+        className="pointer-events-none absolute inset-x-0 bottom-7 z-10 flex justify-center"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.15, duration: 0.8 }}
