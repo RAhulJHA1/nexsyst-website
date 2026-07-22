@@ -55,7 +55,7 @@ export function Logo({
         width={372}
         height={135}
         style={filter ? { filter } : undefined}
-        className={`h-9 w-auto max-w-[200px] object-contain object-left sm:h-10 sm:max-w-[240px] ${className}`}
+        className={`h-14 w-auto max-w-[min(100%,280px)] object-contain object-left sm:h-16 sm:max-w-[340px] ${className}`}
         decoding="async"
       />
     )

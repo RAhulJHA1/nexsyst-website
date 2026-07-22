@@ -47,8 +47,8 @@ export function Nav() {
           : "border-b border-transparent bg-transparent"
       }`}
     >
-      <div className="section-pad mx-auto flex h-[4.25rem] max-w-6xl items-center justify-between gap-6">
-        <Link to="/" className="inline-flex items-center">
+      <div className="section-pad mx-auto flex h-[4.75rem] max-w-6xl items-center justify-between gap-6 sm:h-[5.25rem]">
+        <Link to="/" className="inline-flex shrink-0 items-center">
           <Logo variant="full" tone="onDark" />
         </Link>
 
