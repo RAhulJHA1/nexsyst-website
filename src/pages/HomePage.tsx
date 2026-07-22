@@ -1,39 +1,42 @@
 import { Hero } from "../components/Hero"
-import { TrustBar } from "../components/TrustBar"
-import { FeaturedApps } from "../components/FeaturedApps"
+import { Mission } from "../components/Mission"
 import { Stats } from "../components/Stats"
 import { Products } from "../components/Products"
-import { Suite } from "../components/Suite"
-import { BuyPath } from "../components/BuyPath"
-import { WhyNexSyst } from "../components/WhyNexSyst"
-import { SocialProof } from "../components/SocialProof"
-import { Platform } from "../components/Platform"
 import { Services } from "../components/Services"
 import { TechOrbit } from "../components/TechOrbit"
-import { GlobalPresence } from "../components/GlobalPresence"
+import { WhyNexSyst } from "../components/WhyNexSyst"
 import { HowItWorks } from "../components/HowItWorks"
+import { GlobalPresence } from "../components/GlobalPresence"
 import { Industries } from "../components/Industries"
+import { SocialProof } from "../components/SocialProof"
+import { BuyPath } from "../components/BuyPath"
+import { Suite } from "../components/Suite"
+import { Platform } from "../components/Platform"
 import { Faq } from "../components/Faq"
 import { Contact } from "../components/Contact"
 
+/**
+ * Cinematic scroll story:
+ * Hero → Mission → Stats → Products → Services → Technology → Why → Process →
+ * Presence → Industries → Stories → Buy → Suite → Platform → FAQ → Contact
+ */
 export function HomePage() {
   return (
     <>
       <Hero />
-      <TrustBar />
-      <FeaturedApps />
+      <Mission />
       <Stats />
       <Products />
       <Services />
       <TechOrbit />
-      <GlobalPresence />
-      <BuyPath />
       <WhyNexSyst />
+      <HowItWorks />
+      <GlobalPresence />
+      <Industries />
       <SocialProof />
+      <BuyPath />
       <Suite />
       <Platform />
-      <HowItWorks />
-      <Industries />
       <Faq />
       <Contact />
     </>

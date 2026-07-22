@@ -11,19 +11,19 @@ import type { ReactNode } from "react"
 export const easeOut = [0.22, 1, 0.36, 1] as const
 
 const fadeUp: Variants = {
-  hidden: { opacity: 0, y: 40, rotateX: 8, scale: 0.96 },
+  hidden: { opacity: 0, y: 48, filter: "blur(8px)", scale: 0.98 },
   show: {
     opacity: 1,
     y: 0,
-    rotateX: 0,
+    filter: "blur(0px)",
     scale: 1,
-    transition: { duration: 0.8, ease: easeOut },
+    transition: { duration: 0.95, ease: easeOut },
   },
 }
 
 const stagger: Variants = {
   hidden: {},
-  show: { transition: { staggerChildren: 0.1, delayChildren: 0.05 } },
+  show: { transition: { staggerChildren: 0.12, delayChildren: 0.06 } },
 }
 
 export function MotionSection({
@@ -46,9 +46,9 @@ export function MotionSection({
       className={className}
       initial={reduce ? false : "hidden"}
       whileInView="show"
-      viewport={{ once: true, amount: 0.12, margin: "0px 0px -6% 0px" }}
+      viewport={{ once: true, amount: 0.16, margin: "0px 0px -8% 0px" }}
       variants={reduce ? undefined : stagger}
-      style={{ perspective: 1200 }}
+      style={{ perspective: 1400 }}
     >
       {children}
     </motion.section>
@@ -66,7 +66,11 @@ export function FadeItem({
   return (
     <motion.div
       className={className}
-      variants={reduce ? undefined : fadeUp}
+      variants={
+        reduce
+          ? undefined
+          : fadeUp
+      }
       style={{ transformStyle: "preserve-3d" }}
     >
       {children}
@@ -88,7 +92,7 @@ export function HoverLift({
       whileHover={
         reduce
           ? undefined
-          : { y: -8, rotateX: 4, rotateY: -4, transition: { type: "spring", stiffness: 320, damping: 22 } }
+          : { y: -8, rotateX: 3, rotateY: -3, transition: { type: "spring", stiffness: 280, damping: 22 } }
       }
       whileTap={reduce ? undefined : { scale: 0.985 }}
       style={{ transformStyle: "preserve-3d", perspective: 900 }}
@@ -98,7 +102,6 @@ export function HoverLift({
   )
 }
 
-/** Scroll-triggered card: fade + slight rotate + scale */
 export function RevealCard({
   children,
   className = "",
@@ -112,10 +115,10 @@ export function RevealCard({
   return (
     <motion.div
       className={className}
-      initial={reduce ? false : { opacity: 0, y: 48, rotate: 4, scale: 0.94 }}
-      whileInView={{ opacity: 1, y: 0, rotate: 0, scale: 1 }}
-      viewport={{ once: true, amount: 0.2 }}
-      transition={{ duration: 0.75, delay, ease: easeOut }}
+      initial={reduce ? false : { opacity: 0, y: 52, rotate: 3, scale: 0.96, filter: "blur(6px)" }}
+      whileInView={{ opacity: 1, y: 0, rotate: 0, scale: 1, filter: "blur(0px)" }}
+      viewport={{ once: true, amount: 0.22 }}
+      transition={{ duration: 0.85, delay, ease: easeOut }}
       style={{ transformStyle: "preserve-3d" }}
     >
       {children}
@@ -125,7 +128,7 @@ export function RevealCard({
 
 export function ScrollProgress() {
   const { scrollYProgress } = useScroll()
-  const scaleX = useSpring(scrollYProgress, { stiffness: 120, damping: 28, restDelta: 0.001 })
+  const scaleX = useSpring(scrollYProgress, { stiffness: 100, damping: 30, restDelta: 0.001 })
   const reduce = useReducedMotion()
   if (reduce) return null
 

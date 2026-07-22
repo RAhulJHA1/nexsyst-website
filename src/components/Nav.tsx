@@ -5,11 +5,11 @@ import { Menu, X } from "lucide-react"
 import { Logo } from "./Logo"
 
 const links = [
+  { to: "/#about", label: "Mission" },
   { to: "/#products", label: "Products" },
   { to: "/#services", label: "Services" },
   { to: "/#stack", label: "Technology" },
-  { to: "/#how", label: "Delivery" },
-  { to: "/#faq", label: "FAQ" },
+  { to: "/#how", label: "Process" },
   { to: "/#contact", label: "Contact" },
 ]
 
@@ -52,12 +52,12 @@ export function Nav() {
           <Logo variant="full" tone="onDark" />
         </Link>
 
-        <nav className="hidden items-center gap-6 lg:flex" aria-label="Primary">
+        <nav className="hidden items-center gap-7 lg:flex" aria-label="Primary">
           {links.map((link) => (
             <Link
               key={link.to}
               to={link.to}
-              className="text-[0.9rem] font-medium text-white/70 transition-colors hover:text-white"
+              className="link-underline text-[0.9rem] font-medium text-white/65 transition-colors hover:text-white"
             >
               {link.label}
             </Link>

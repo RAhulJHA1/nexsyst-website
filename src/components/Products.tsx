@@ -16,17 +16,17 @@ export function Products() {
   return (
     <MotionSection
       id="products"
-      className="section-pad relative overflow-hidden bg-surface py-24 md:py-32"
+      className="section-pad section-space relative overflow-hidden bg-surface"
       ariaLabelledBy="products-heading"
     >
       <div className="pointer-events-none absolute -right-20 top-20 h-64 w-64 rounded-full bg-accent/10 blur-3xl" aria-hidden />
 
       <div className="relative mx-auto max-w-6xl">
         <FadeItem>
-          <p className="text-sm font-semibold uppercase tracking-[0.22em] text-accent-deep">Plant products</p>
+          <p className="text-sm font-semibold uppercase tracking-[0.28em] text-accent">Plant products</p>
           <h2
             id="products-heading"
-            className="mt-3 max-w-2xl font-display text-[clamp(1.85rem,3.5vw,2.75rem)] font-bold leading-tight text-ink text-balance"
+            className="mt-4 max-w-2xl font-display text-[clamp(1.85rem,3.5vw,2.75rem)] font-bold leading-tight text-white text-balance"
           >
             Industrial apps that close the gap from shop floor to compliance
           </h2>
