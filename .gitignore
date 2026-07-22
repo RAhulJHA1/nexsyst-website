@@ -1,0 +1,11 @@
+# Local secrets — never commit
+.env
+.env.local
+.env.*.local
+
+# Build
+dist
+node_modules
+
+# Vercel
+.vercel

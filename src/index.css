@@ -1,0 +1,114 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Syne", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Figtree", ui-sans-serif, system-ui, sans-serif;
+
+  --color-brand: #050a14;
+  --color-ink: #0c1524;
+  --color-muted: #5a6b7f;
+  --color-canvas: #eef3f8;
+  --color-surface: #f7fafc;
+  --color-line: #d5e0eb;
+  --color-accent: #0f9f8a;
+  --color-accent-deep: #0a7a6a;
+  --color-steel: #1a6fa8;
+  --color-mist: #c8d9e8;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: var(--font-sans);
+    color: var(--color-ink);
+    background: var(--color-canvas);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background: color-mix(in oklab, var(--color-accent) 35%, white);
+    color: var(--color-brand);
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: var(--font-display);
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+
+  .focus\:not-sr-only:focus {
+    position: static;
+    width: auto;
+    height: auto;
+    padding: inherit;
+    margin: inherit;
+    overflow: visible;
+    clip: auto;
+    white-space: normal;
+  }
+
+  .mesh-hero {
+    background:
+      radial-gradient(ellipse 80% 60% at 70% 35%, rgba(15, 159, 138, 0.28), transparent 55%),
+      radial-gradient(ellipse 50% 45% at 18% 70%, rgba(26, 111, 168, 0.32), transparent 50%),
+      radial-gradient(ellipse 40% 30% at 85% 85%, rgba(200, 217, 232, 0.1), transparent 45%),
+      linear-gradient(165deg, #050a14 0%, #0a1628 48%, #07101c 100%);
+  }
+
+  .grid-fade {
+    background-image:
+      linear-gradient(rgba(200, 217, 232, 0.08) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(200, 217, 232, 0.08) 1px, transparent 1px);
+    background-size: 56px 56px;
+    mask-image: radial-gradient(ellipse 70% 60% at 60% 40%, black 20%, transparent 75%);
+  }
+
+  .section-pad {
+    padding-inline: clamp(1.25rem, 4vw, 3.5rem);
+  }
+
+  .btn-primary {
+    background: linear-gradient(180deg, #14b8a0 0%, #0f9f8a 55%, #0a7a6a 100%);
+    color: #050a14;
+    box-shadow:
+      0 1px 0 rgba(255, 255, 255, 0.25) inset,
+      0 12px 28px -12px rgba(15, 159, 138, 0.65);
+    transition: filter 0.2s ease, transform 0.2s ease;
+  }
+
+  .btn-primary:hover {
+    filter: brightness(1.06);
+  }
+
+  .btn-primary:active {
+    filter: brightness(0.96);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
