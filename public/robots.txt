@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://nexsyst.com/sitemap.xml
+# Official NexSyst website
+Sitemap: https://nexsyst.in/sitemap.xml

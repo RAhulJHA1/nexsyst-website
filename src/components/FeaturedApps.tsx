@@ -6,7 +6,7 @@ export function FeaturedApps() {
   return (
     <MotionSection
       id="apps"
-      className="section-pad border-b border-line bg-white py-16 md:py-20"
+      className="section-pad border-b border-line bg-surface py-16 md:py-20"
       ariaLabelledBy="featured-heading"
     >
       <div className="mx-auto max-w-6xl">
@@ -30,7 +30,7 @@ export function FeaturedApps() {
               <HoverLift className="h-full">
                 <Link
                   to={app.href}
-                  className="flex h-full flex-col rounded-xl border border-line bg-surface p-4 transition hover:border-accent/40 hover:bg-white"
+                  className="flex h-full flex-col rounded-xl border border-line bg-surface p-4 transition hover:border-accent/40 hover:bg-surface"
                 >
                   <span className="font-display text-base font-bold text-ink">{app.name}</span>
                   <span className="mt-1 text-xs leading-snug text-muted">{app.tagline}</span>

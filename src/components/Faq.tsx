@@ -11,7 +11,7 @@ export function Faq() {
   return (
     <MotionSection
       id="faq"
-      className="section-pad bg-white py-24 md:py-32"
+      className="section-pad bg-surface py-24 md:py-32"
       ariaLabelledBy="faq-heading"
     >
       <div className="mx-auto max-w-3xl">

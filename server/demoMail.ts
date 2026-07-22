@@ -175,7 +175,7 @@ export function loadDemoMailConfig(env: Record<string, string | undefined>): Dem
   return {
     resendApiKey: (env.RESEND_API_KEY ?? "").trim(),
     fromAddress: (env.RESEND_FROM_ADDRESS ?? "").trim(),
-    notifyEmail: (env.DEMO_NOTIFY_EMAIL ?? "rahul.jha@nexionautomation.com").trim(),
+    notifyEmail: (env.DEMO_NOTIFY_EMAIL ?? "info@nexsyst.in").trim(),
     fromName: (env.RESEND_FROM_NAME ?? "NexSyst").trim(),
   }
 }

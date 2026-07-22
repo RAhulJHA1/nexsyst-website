@@ -20,12 +20,14 @@ export function ProductPage() {
   useEffect(() => {
     if (!product) return
     setPageMeta(
-      `${product.name} | NexSyst`,
-      product.answer,
+      `NexSyst ${product.name} | Official Product`,
+      product.answer.startsWith("NexSyst")
+        ? product.answer
+        : `NexSyst ${product.name}. ${product.answer}`,
     )
     return () => {
       setPageMeta(
-        "NexSyst | The Operating System for Plant & Business",
+        brand.shortSeoTitle,
         brand.description,
       )
     }
@@ -72,7 +74,7 @@ export function ProductPage() {
               </Link>
               <a
                 href="#why"
-                className="inline-flex items-center rounded-md border border-white/20 px-5 py-3.5 text-sm font-semibold text-white transition hover:bg-white/5"
+                className="inline-flex items-center rounded-md border border-white/20 px-5 py-3.5 text-sm font-semibold text-white transition hover:bg-surface/5"
               >
                 Why it helps
               </a>
@@ -99,7 +101,7 @@ export function ProductPage() {
           <div className="mt-10 grid gap-5 md:grid-cols-2">
             {product.whyHelps.map((item) => (
               <FadeItem key={item.title}>
-                <article className="h-full rounded-xl border border-line bg-white p-6">
+                <article className="h-full rounded-xl border border-line bg-surface p-6">
                   <div className="flex items-start gap-3">
                     <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-accent-deep" aria-hidden />
                     <div>
@@ -125,7 +127,7 @@ export function ProductPage() {
           <div className="mt-10 grid gap-5 md:grid-cols-2">
             {product.useCases.map((uc) => (
               <FadeItem key={uc.title}>
-                <article className="h-full rounded-xl border border-line bg-white p-6">
+                <article className="h-full rounded-xl border border-line bg-surface p-6">
                   {uc.industry && (
                     <span className="text-[0.65rem] font-semibold uppercase tracking-[0.16em] text-steel">
                       {uc.industry}
@@ -140,7 +142,7 @@ export function ProductPage() {
         </div>
       </MotionSection>
 
-      <MotionSection id="features" className="section-pad bg-white py-20 md:py-24" ariaLabelledBy="features-title">
+      <MotionSection id="features" className="section-pad bg-surface py-20 md:py-24" ariaLabelledBy="features-title">
         <div className="mx-auto max-w-6xl">
           <FadeItem>
             <p className="text-sm font-semibold uppercase tracking-[0.22em] text-accent-deep">Features</p>
@@ -186,7 +188,7 @@ export function ProductPage() {
                 <li className="before:mr-2 before:text-accent before:content-['▸']">Training and AMC so you are not left alone after go-live</li>
               </ul>
             </div>
-            <div className="flex flex-col gap-3 rounded-2xl border border-white/12 bg-white/[0.06] p-6 backdrop-blur">
+            <div className="flex flex-col gap-3 rounded-2xl border border-white/12 bg-surface/[0.06] p-6 backdrop-blur">
               <Link
                 to="/#contact"
                 className="btn-primary inline-flex items-center justify-center gap-2 rounded-md px-5 py-3.5 text-sm font-semibold"
@@ -196,7 +198,7 @@ export function ProductPage() {
               </Link>
               <Link
                 to="/#buy"
-                className="inline-flex items-center justify-center rounded-md border border-white/20 px-5 py-3 text-sm font-semibold text-white hover:bg-white/5"
+                className="inline-flex items-center justify-center rounded-md border border-white/20 px-5 py-3 text-sm font-semibold text-white hover:bg-surface/5"
               >
                 See how buying works
               </Link>
@@ -214,7 +216,7 @@ export function ProductPage() {
               <Link
                 key={p.id}
                 to={productPath(p.id as ProductId)}
-                className="rounded-xl border border-line bg-white p-4 transition hover:border-accent/40"
+                className="rounded-xl border border-line bg-surface p-4 transition hover:border-accent/40"
               >
                 <span className="text-[0.65rem] font-semibold uppercase tracking-[0.16em] text-steel">
                   {p.category}

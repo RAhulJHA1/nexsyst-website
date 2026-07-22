@@ -2,7 +2,7 @@ import { useState, type FormEvent } from "react"
 import { motion, useReducedMotion } from "framer-motion"
 import { CheckCircle2, Loader2, Send } from "lucide-react"
 import { FadeItem, MotionSection } from "./Motion"
-import { products } from "../data/content"
+import { products, serviceInterestOptions } from "../data/content"
 import { submitDemoRequest, type DemoRequestPayload } from "../lib/demoApi"
 
 const emptyForm: DemoRequestPayload = {
@@ -200,23 +200,23 @@ export function Contact() {
 
               <fieldset className="mt-5">
                 <legend className="mb-2 text-xs font-semibold uppercase tracking-wider text-white/50">
-                  Products interested
+                  Products & services interested
                 </legend>
                 <div className="flex flex-wrap gap-2">
-                  {products.map((p) => {
-                    const on = form.productsInterested.includes(p.name)
+                  {[...products.map((p) => p.name), ...serviceInterestOptions].map((name) => {
+                    const on = form.productsInterested.includes(name)
                     return (
                       <button
-                        key={p.id}
+                        key={name}
                         type="button"
-                        onClick={() => toggleProduct(p.name)}
+                        onClick={() => toggleProduct(name)}
                         className={`rounded-md border px-3 py-1.5 text-xs font-semibold transition ${
                           on
                             ? "border-accent bg-accent/20 text-accent"
                             : "border-white/15 bg-white/5 text-white/70 hover:border-white/30"
                         }`}
                       >
-                        {p.name}
+                        {name}
                       </button>
                     )
                   })}

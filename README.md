@@ -26,7 +26,7 @@ The demo form posts to `/api/demo-request`. Locally, Vite middleware handles it 
 | `RESEND_API_KEY` | `re_…` | **Server only** — never use `VITE_` |
 | `RESEND_FROM_ADDRESS` | `noreply@nexsyst.in` | Verified sender in Resend |
 | `RESEND_FROM_NAME` | `NexSyst` | Optional |
-| `DEMO_NOTIFY_EMAIL` | `rahul.jha@nexionautomation.com` | Inbox for leads |
+| `DEMO_NOTIFY_EMAIL` | `info@nexsyst.in` | Inbox for leads |
 
 4. Deploy. Form → `POST /api/demo-request` (Vercel serverless) → email via Resend.
 
@@ -43,6 +43,6 @@ npm run preview
 
 - **Products** — Energy Management, Alarm Management, Audit Trail, QC Log Book, Batch Report, OEE
 - **Platform** — CRM, PO, Inventory, Assets, Projects, HR/Payroll, Expense, Gate Pass
-- **Services** — Industrial software, OT–IT, digital transformation, AMC, turnkey
+- **Services** — Cloud, AI/ML for enterprise, RAG, industrial software, OT–IT, digital transformation, AMC, turnkey
 - **SEO / AEO** — meta, OG, JSON-LD, FAQ
 - **Contact** — Vercel serverless + Resend (self-contained)

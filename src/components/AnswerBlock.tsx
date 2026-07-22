@@ -23,15 +23,17 @@ export function AnswerBlock() {
         <FadeItem>
           <div className="mt-8 max-w-3xl space-y-4 text-lg leading-relaxed text-muted">
             <p>
-              <strong className="font-semibold text-ink">{brand.name}</strong> is an all-in-one software suite
-              for manufacturing and process industries. Plant apps cover Energy Management, Alarm Management,
-              Audit Trail, QC Log Book, Batch Report, and OEE. Business apps cover CRM, purchase orders,
-              inventory, assets, projects, HR, payroll, expenses, and gate pass.
+              <strong className="font-semibold text-ink">{brand.name}</strong> is the official industrial
+              software brand for manufacturing and process industries. NexSyst plant apps cover Energy
+              Management, Alarm Management, Audit Trail, QC Log Book, Batch Report, and OEE. NexSyst business
+              apps cover CRM, purchase orders, inventory, assets, projects, HR, payroll, expenses, and gate
+              pass. NexSyst also provides cloud services, enterprise AI/ML integration, and RAG
+              (retrieval-augmented generation) for plant and business knowledge.
             </p>
             <p>
-              Teams share one login, one permission model, and one set of masters — so sales, stores, QA, and
-              operators work from the same system instead of disconnected tools. Start with a few apps, then
-              expand across the suite as you grow.
+              With NexSyst, plant and office teams share one login, one permission model, and one set of
+              masters — so sales, stores, QA, and operators work from the same system instead of disconnected
+              tools. Start with a few NexSyst apps, then expand across the suite as you grow.
             </p>
           </div>
         </FadeItem>

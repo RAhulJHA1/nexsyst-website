@@ -6,9 +6,9 @@ import { Logo } from "./Logo"
 
 const links = [
   { to: "/#products", label: "Products" },
-  { to: "/#buy", label: "How to buy" },
-  { to: "/#suite", label: "Suite" },
-  { to: "/#stories", label: "Stories" },
+  { to: "/#services", label: "Services" },
+  { to: "/#stack", label: "Technology" },
+  { to: "/#how", label: "Delivery" },
   { to: "/#faq", label: "FAQ" },
   { to: "/#contact", label: "Contact" },
 ]
@@ -68,7 +68,7 @@ export function Nav() {
           <motion.div whileHover={reduce ? undefined : { scale: 1.04 }} whileTap={reduce ? undefined : { scale: 0.98 }}>
             <Link
               to="/#contact"
-              className="inline-flex rounded-md bg-accent px-4 py-2 text-sm font-semibold text-brand"
+              className="btn-primary inline-flex rounded-full px-4 py-2 text-sm font-semibold"
             >
               Talk to us
             </Link>

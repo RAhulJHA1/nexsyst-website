@@ -42,10 +42,10 @@ export function Suite() {
                 role="tab"
                 aria-selected={active === i}
                 onClick={() => setActive(i)}
-                className={`rounded-md px-3.5 py-2 text-sm font-semibold transition ${
+                className={`rounded-full px-3.5 py-2 text-sm font-semibold transition ${
                   active === i
-                    ? "bg-brand text-white"
-                    : "bg-white text-muted hover:text-ink border border-line"
+                    ? "bg-gradient-to-r from-accent to-accent-deep text-brand"
+                    : "glass text-muted hover:text-ink"
                 }`}
               >
                 {p.title}
@@ -62,7 +62,7 @@ export function Suite() {
             animate={{ opacity: 1, y: 0 }}
             exit={reduce ? undefined : { opacity: 0, y: -8 }}
             transition={{ duration: 0.35, ease: easeOut }}
-            className="mt-8 grid gap-8 rounded-2xl border border-line bg-white p-7 md:grid-cols-[1.2fr_1fr] md:p-10"
+            className="mt-8 grid gap-8 rounded-2xl glass p-7 md:grid-cols-[1.2fr_1fr] md:p-10"
           >
             <div>
               <h3 className="font-display text-2xl font-bold text-ink">{pillar.headline}</h3>

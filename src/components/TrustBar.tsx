@@ -6,7 +6,7 @@ const icons = [Layers, ShieldCheck, Headset, Cloud]
 
 export function TrustBar() {
   return (
-    <MotionSection className="border-b border-line bg-white" ariaLabelledBy="trust-heading">
+    <MotionSection className="border-b border-line bg-surface" ariaLabelledBy="trust-heading">
       <h2 id="trust-heading" className="sr-only">
         Why buyers trust NexSyst
       </h2>

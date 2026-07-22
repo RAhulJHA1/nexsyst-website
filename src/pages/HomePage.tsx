@@ -8,6 +8,9 @@ import { BuyPath } from "../components/BuyPath"
 import { WhyNexSyst } from "../components/WhyNexSyst"
 import { SocialProof } from "../components/SocialProof"
 import { Platform } from "../components/Platform"
+import { Services } from "../components/Services"
+import { TechOrbit } from "../components/TechOrbit"
+import { GlobalPresence } from "../components/GlobalPresence"
 import { HowItWorks } from "../components/HowItWorks"
 import { Industries } from "../components/Industries"
 import { Faq } from "../components/Faq"
@@ -21,6 +24,9 @@ export function HomePage() {
       <FeaturedApps />
       <Stats />
       <Products />
+      <Services />
+      <TechOrbit />
+      <GlobalPresence />
       <BuyPath />
       <WhyNexSyst />
       <SocialProof />

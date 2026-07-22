@@ -26,7 +26,7 @@ export function Industries() {
         <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {industries.map((ind) => (
             <FadeItem key={ind.name}>
-              <article className="h-full rounded-xl border border-line bg-white p-5 shadow-[0_1px_0_rgba(12,21,36,0.04)]">
+              <article className="h-full rounded-xl border border-line bg-surface p-5 shadow-[0_1px_0_rgba(12,21,36,0.04)]">
                 <h3 className="font-display text-lg font-bold text-ink">{ind.name}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-muted">{ind.blurb}</p>
               </article>

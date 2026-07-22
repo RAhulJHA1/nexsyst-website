@@ -44,7 +44,7 @@ export function Products() {
                 <HoverLift className="h-full">
                   <Link
                     to={productPath(product.id as ProductId)}
-                    className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-line bg-white p-7 shadow-[0_1px_0_rgba(12,21,36,0.04)] transition duration-300 hover:border-accent/35 hover:shadow-[0_24px_50px_-28px_rgba(15,159,138,0.45)] md:min-h-[300px]"
+                    className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-line bg-surface p-7 shadow-[0_1px_0_rgba(12,21,36,0.04)] transition duration-300 hover:border-accent/35 hover:shadow-[0_24px_50px_-28px_rgba(15,159,138,0.45)] md:min-h-[300px]"
                   >
                     <div
                       className="pointer-events-none absolute inset-x-0 top-0 h-1 origin-left scale-x-0 bg-gradient-to-r from-accent to-steel transition duration-500 group-hover:scale-x-100"

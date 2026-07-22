@@ -5,6 +5,9 @@ import { ScrollProgress } from "../components/Motion"
 import { Nav } from "../components/Nav"
 import { Footer } from "../components/Footer"
 import { StickyBuyBar } from "../components/StickyBuyBar"
+import { SmoothScroll } from "../components/SmoothScroll"
+import { Loader } from "../components/Loader"
+import { GlowCursor } from "../components/GlowCursor"
 
 function ScrollToTop() {
   const { pathname, hash } = useLocation()
@@ -26,8 +29,11 @@ function ScrollToTop() {
 
 export function SiteLayout() {
   return (
-    <div className="min-h-svh">
+    <div className="min-h-svh bg-brand text-ink">
       <Seo />
+      <SmoothScroll />
+      <Loader />
+      <GlowCursor />
       <ScrollToTop />
       <a
         href="#main"

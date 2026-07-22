@@ -2,14 +2,17 @@ export const brand = {
   name: "NexSyst",
   tagline: "SMART SYSTEMS. BETTER SOLUTIONS.",
   /** Public marketing URL — update when the site is deployed. */
-  url: "https://nexsyst.com",
-  email: "info@nexsyst.com",
+  url: "https://nexsyst.in",
+  email: "info@nexsyst.in",
   description:
-    "NexSyst is the operating system for process plants and industrial businesses — energy, alarms, audit, QC, batch reporting, CRM, procurement, assets, HR, and projects in one connected suite.",
+    "NexSyst is the official industrial software suite for process plants and industrial businesses — energy, alarms, audit, QC, batch reporting, CRM, procurement, assets, HR, and projects. NexSyst also delivers cloud services, enterprise AI/ML integration, and RAG (retrieval-augmented generation) solutions. SMART SYSTEMS. BETTER SOLUTIONS.",
   suiteLine: "The operating system for plant & business",
+  shortSeoTitle: "NexSyst | Official Website — Industrial Software Suite",
+  keywords:
+    "NexSyst, Nexsyst, Nex Syst, NexSyst official website, NexSyst software, NexSyst industrial suite, NexSyst cloud services, NexSyst AI ML, NexSyst RAG, enterprise AI integration, retrieval augmented generation, NexSyst energy management, process plant software, industrial software suite",
 }
 
-/** Zoho-style featured apps strip */
+/** Featured apps strip on the homepage */
 export const featuredApps = [
   {
     id: "energy",
@@ -53,7 +56,7 @@ export { products } from "./products"
 export type { ProductDetail, ProductId } from "./products"
 export { getProduct, productPath } from "./products"
 
-/** Suite pillars — like Zoho One department tabs */
+/** Suite pillars by department */
 export const suitePillars = [
   {
     id: "plant",
@@ -145,11 +148,11 @@ export const platformModules = [
 export const whyNexSyst = [
   {
     title: "One suite. Zero silos.",
-    body: "Plant, sales, procurement, people, and projects share the same identity, permissions, and customer/vendor masters — like an operating system for your business, not a pile of point tools.",
+    body: "Plant, sales, procurement, people, and projects share the same identity, permissions, and customer/vendor masters — one operating system for your business, not a pile of disconnected tools.",
   },
   {
     title: "Built for process industries",
-    body: "Energy, alarms, audit, QC, and batch reporting sit beside CRM and PO — designed for regulated manufacturing, not generic office SaaS alone.",
+    body: "Energy, alarms, audit, QC, and batch reporting sit beside CRM and purchase orders — designed for regulated manufacturing and industrial operations.",
   },
   {
     title: "OT meets IT",
@@ -164,37 +167,59 @@ export const whyNexSyst = [
 export const howItWorks = [
   {
     step: "01",
-    title: "Map your plant & teams",
-    body: "We scope lines, compliance needs, and which modules you need first — energy and QC, CRM and PO, or the full suite.",
+    title: "Discover",
+    body: "Map plant pain, compliance needs, cloud readiness, and AI opportunities — then pick the first modules that prove value.",
   },
   {
     step: "02",
-    title: "Configure & connect",
-    body: "Roles, masters, approvals, and OT–IT integrations are set up so data flows from floor to finance without re-entry.",
+    title: "Design",
+    body: "Architecture, UX, integrations, and security model aligned to your OT–IT landscape and enterprise standards.",
   },
   {
     step: "03",
-    title: "Go live & improve",
-    body: "Train users, cut over from paper or legacy tools, then iterate with AMC support, dashboards, and new modules as you grow.",
+    title: "Develop",
+    body: "Build NexSyst apps, cloud services, AI/ML pipelines, and RAG knowledge layers with iterative demos.",
+  },
+  {
+    step: "04",
+    title: "Deploy",
+    body: "Go live on cloud or on-prem with roles, training, cutover support, and measurable success criteria.",
+  },
+  {
+    step: "05",
+    title: "Support",
+    body: "AMC and 24×365 coverage — monitoring, enhancements, and continuous improvement as you expand the suite.",
   },
 ] as const
 
 export const services = [
+  {
+    title: "Cloud Services",
+    body: "Design, migrate, and operate NexSyst and enterprise workloads in the cloud — secure hosting, environments, backups, scaling, and managed delivery for industrial teams.",
+  },
+  {
+    title: "AI & ML for Enterprise",
+    body: "Build and integrate enterprise AI/ML into plant and business workflows — predictive insights, anomaly detection, decision support, and model pipelines grounded in your operational data.",
+  },
+  {
+    title: "RAG Solutions",
+    body: "Retrieval-augmented generation (RAG) for enterprise knowledge — connect SOPs, manuals, QC records, and policies so teams get accurate, cited answers instead of generic chat.",
+  },
   {
     title: "Industrial Software Engineering",
     body: "Custom MES views, plant applications, and extensions designed around your process — not generic templates.",
   },
   {
     title: "OT–IT Integration",
-    body: "Bridge PLC/SCADA, edge gateways, and enterprise systems so floor data feeds CRM, inventory, and reporting.",
+    body: "Bridge PLC/SCADA, edge gateways, and enterprise systems so floor data feeds CRM, inventory, reporting, and AI pipelines.",
   },
   {
     title: "Digital Transformation",
-    body: "Roadmaps that replace paper QC, manual batch books, and siloed alarms with connected NexSyst modules.",
+    body: "Roadmaps that replace paper QC, manual batch books, and siloed alarms with connected NexSyst modules and modern cloud delivery.",
   },
   {
-    title: "Cloud & Secure Delivery",
-    body: "Hosted or on-prem deployments with role-based access, auditability, and Microsoft Teams-ready workflows.",
+    title: "Secure Platform Delivery",
+    body: "Hosted or on-prem deployments with role-based access, auditability, and secure collaboration workflows.",
   },
   {
     title: "AMC & 24×365 Support",
@@ -202,8 +227,16 @@ export const services = [
   },
   {
     title: "Turnkey Project Delivery",
-    body: "From discovery and UX to commissioning — single-vendor accountability for software and automation programs.",
+    body: "From discovery and UX to commissioning — single-vendor accountability for software, cloud, and AI programs.",
   },
+] as const
+
+/** Extra interest options on the demo form (services + suite). */
+export const serviceInterestOptions = [
+  "Cloud Services",
+  "AI & ML for Enterprise",
+  "RAG Solutions",
+  "Full NexSyst Suite",
 ] as const
 
 export const industries = [
@@ -294,7 +327,7 @@ export const testimonials = [
 export const purchaseComfort = [
   {
     title: "Buy only what you need first",
-    body: "Pilot Energy + QC, or CRM + PO — then expand. You are not forced into a 40-app license on day one.",
+    body: "Pilot Energy + QC, or CRM + purchase orders — then expand. You are not forced into a full-suite license on day one.",
   },
   {
     title: "Human proposal, not a checkout cart",
@@ -306,22 +339,37 @@ export const purchaseComfort = [
   },
 ] as const
 
-/** Answer-engine friendly FAQs — plain, direct answers. */
+/** Answer-engine friendly FAQs — plain, direct answers. Brand-first for NexSyst search. */
 export const faqs = [
   {
     question: "What is NexSyst?",
     answer:
-      "NexSyst is an integrated software suite for process plants and industrial businesses — the operating system for plant and business. It includes energy management, alarm management, audit trails, QC log books, batch reports, OEE, plus CRM, purchase orders, inventory, assets, HR, payroll, expenses, projects, and gate pass.",
+      "NexSyst is an official industrial software brand and integrated suite for process plants and industrial businesses — the operating system for plant and business. NexSyst includes energy management, alarm management, audit trails, QC log books, batch reports, OEE, plus CRM, purchase orders, inventory, assets, HR, payroll, expenses, projects, and gate pass.",
   },
   {
-    question: "Is NexSyst like Zoho One for manufacturing?",
+    question: "What is the official NexSyst website?",
     answer:
-      "NexSyst follows a similar suite idea — one platform for many teams — but is purpose-built for industrial and process plants. It combines shop-floor products (energy, alarms, audit, QC, batch) with business apps (CRM, PO, inventory, HR) instead of only office SaaS tools.",
+      "The official NexSyst website is https://nexsyst.in. It is the home of NexSyst software product information, suite overview, industries served, FAQs, and demo requests for NexSyst plant and business applications.",
+  },
+  {
+    question: "What does the NexSyst tagline mean?",
+    answer:
+      "The NexSyst tagline is SMART SYSTEMS. BETTER SOLUTIONS. It reflects NexSyst’s focus on practical industrial software that improves plant visibility, compliance, and business operations.",
   },
   {
     question: "What products does NexSyst offer?",
     answer:
-      "Plant products: Energy Management, Alarm Management, Audit Trail, QC Log Book, Batch Report, and OEE. Business modules: CRM, Purchase Orders, Inventory & Indents, Asset Management, Projects, HR/Attendance/Payroll, Expense Portal, and Gate Pass.",
+      "NexSyst plant products include Energy Management, Alarm Management, Audit Trail, QC Log Book, Batch Report, and OEE. NexSyst business modules include CRM, Purchase Orders, Inventory & Indents, Asset Management, Projects, HR/Attendance/Payroll, Expense Portal, and Gate Pass.",
+  },
+  {
+    question: "Does NexSyst provide cloud, AI/ML, and RAG services?",
+    answer:
+      "Yes. NexSyst provides cloud services for secure hosting and managed delivery, enterprise AI and machine learning integration for plant and business workflows, and RAG (retrieval-augmented generation) solutions that answer from your own SOPs, manuals, and operational documents.",
+  },
+  {
+    question: "What is NexSyst RAG?",
+    answer:
+      "NexSyst RAG is a retrieval-augmented generation service: enterprise documents and plant knowledge are indexed so AI answers stay grounded in your content with relevant context — useful for SOPs, QC guidance, maintenance manuals, and policy Q&A.",
   },
   {
     question: "Who is NexSyst for?",
@@ -329,28 +377,28 @@ export const faqs = [
       "NexSyst is built for process industries including pharmaceuticals, chemical, cement, metals and mining, CPG, water treatment, and automotive — from operators and QA to sales, stores, HR, and leadership.",
   },
   {
-    question: "How is NexSyst different from a generic ERP?",
+    question: "How is NexSyst different from generic plant software?",
     answer:
-      "Generic ERP focuses on back-office finance and inventory. NexSyst adds plant intelligence — energy, alarms, audit, QC, and batch reporting — and connects them to CRM, PO, assets, and people in one workspace designed for OT–IT integration.",
+      "NexSyst connects plant intelligence — energy, alarms, audit, QC, and batch reporting — with CRM, purchase orders, assets, and people in one workspace. That OT–IT link is designed for industrial teams, not office-only tools.",
   },
   {
-    question: "Can we start with a few apps and expand?",
+    question: "Can we start with a few NexSyst apps and expand?",
     answer:
-      "Yes. Most plants start with plant modules (for example Energy + QC + Batch) or business modules (CRM + PO), then add payroll, assets, or OEE as adoption grows — the same suite, phased rollout.",
+      "Yes. Most plants start with NexSyst plant modules (for example Energy + QC + Batch) or business modules (CRM + purchase orders), then add payroll, assets, or OEE as adoption grows — the same NexSyst suite, phased rollout.",
   },
   {
     question: "Does NexSyst support audit and compliance?",
     answer:
-      "Yes. Audit Trail captures who changed what and when. QC Log Book and Batch Report support digital quality records and end-of-batch dossiers suitable for regulated environments.",
+      "Yes. NexSyst Audit Trail captures who changed what and when. NexSyst QC Log Book and Batch Report support digital quality records and end-of-batch dossiers suitable for regulated environments.",
   },
   {
-    question: "How do I purchase NexSyst?",
+    question: "How do I purchase NexSyst software?",
     answer:
-      "Request a demo on this website. After a walkthrough, we send a scoped proposal covering modules, users, hosting, timeline, and AMC. Most plants start with a pilot of one or two products, then expand.",
+      "Request a NexSyst demo on this official website. After a walkthrough, you receive a scoped proposal covering modules, users, hosting, timeline, and AMC. Most plants start with a pilot of one or two NexSyst products, then expand.",
   },
   {
     question: "How do I request a NexSyst demo?",
     answer:
-      "Use the Request a demo form on this website. Your details are emailed to our team so we can map a rollout to your plant and compliance needs.",
+      "Use the Request a demo form on the official NexSyst website. Your details are emailed to the NexSyst team so we can map a rollout to your plant and compliance needs.",
   },
 ] as const

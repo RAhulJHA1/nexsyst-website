@@ -5,7 +5,7 @@ export function Platform() {
   return (
     <MotionSection
       id="platform"
-      className="section-pad relative overflow-hidden bg-white py-24 md:py-32"
+      className="section-pad relative overflow-hidden bg-surface py-24 md:py-32"
       ariaLabelledBy="platform-heading"
     >
       <div className="relative mx-auto max-w-6xl">
@@ -27,7 +27,7 @@ export function Platform() {
           {platformModules.map((mod) => (
             <FadeItem key={mod.name}>
               <HoverLift className="h-full">
-                <div className="flex h-full flex-col rounded-xl border border-line bg-surface p-5 transition duration-300 hover:border-accent/40 hover:bg-white">
+                <div className="flex h-full flex-col rounded-xl border border-line bg-surface p-5 transition duration-300 hover:border-accent/40 hover:bg-surface">
                   <span className="text-[0.65rem] font-semibold uppercase tracking-[0.16em] text-steel">
                     {mod.category}
                   </span>

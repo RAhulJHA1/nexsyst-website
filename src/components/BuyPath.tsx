@@ -7,7 +7,7 @@ export function BuyPath() {
   return (
     <MotionSection
       id="buy"
-      className="section-pad relative overflow-hidden bg-white py-24 md:py-28"
+      className="section-pad relative overflow-hidden bg-surface py-24 md:py-28"
       ariaLabelledBy="buy-heading"
     >
       <div
@@ -33,7 +33,7 @@ export function BuyPath() {
         <ol className="mt-12 grid gap-5 lg:grid-cols-3">
           {buyPath.map((step) => (
             <FadeItem key={step.step}>
-              <li className="relative flex h-full flex-col overflow-hidden rounded-2xl border border-line bg-gradient-to-b from-surface to-white p-7 shadow-[0_20px_40px_-36px_rgba(12,21,36,0.35)]">
+              <li className="relative flex h-full flex-col overflow-hidden rounded-2xl border border-line bg-gradient-to-b from-surface to-brand p-7 shadow-[0_20px_40px_-36px_rgba(12,21,36,0.35)]">
                 <span className="font-display text-4xl font-extrabold tracking-tight text-accent/25">
                   {step.step}
                 </span>

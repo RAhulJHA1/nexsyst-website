@@ -1,37 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://nexsyst.com/</loc>
+    <loc>https://nexsyst.in/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://nexsyst.com/products/energy</loc>
+    <loc>https://nexsyst.in/products/energy</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://nexsyst.com/products/alarm</loc>
+    <loc>https://nexsyst.in/products/alarm</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://nexsyst.com/products/audit</loc>
+    <loc>https://nexsyst.in/products/audit</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://nexsyst.com/products/qc</loc>
+    <loc>https://nexsyst.in/products/qc</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://nexsyst.com/products/batch</loc>
+    <loc>https://nexsyst.in/products/batch</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://nexsyst.com/products/oee</loc>
+    <loc>https://nexsyst.in/products/oee</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
