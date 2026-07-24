@@ -24,7 +24,7 @@ export const featuredApps = [
     id: "crm",
     name: "CRM",
     tagline: "Pipeline to close.",
-    href: "/#platform",
+    href: "/products/crm",
   },
   {
     id: "qc",
@@ -36,23 +36,23 @@ export const featuredApps = [
     id: "po",
     name: "Purchase Orders",
     tagline: "Vendor to PDF.",
-    href: "/#platform",
+    href: "/products/purchase-orders",
   },
   {
     id: "people",
     name: "People & Payroll",
     tagline: "Muster to payslip.",
-    href: "/#platform",
+    href: "/products/hr-payroll",
   },
   {
     id: "assets",
     name: "Assets",
     tagline: "Lifecycle control.",
-    href: "/#platform",
+    href: "/products/assets",
   },
 ] as const
 
-export { products } from "./products"
+export { products, plantProducts } from "./products"
 export type { ProductDetail, ProductId } from "./products"
 export { getProduct, productPath } from "./products"
 
@@ -104,44 +104,60 @@ export const suitePillars = [
 
 export const platformModules = [
   {
+    id: "crm",
     name: "CRM & Pipeline",
     blurb: "Customers, opportunities, and activities in one sales workspace — from first contact to close.",
     category: "Sales",
+    href: "/products/crm",
   },
   {
+    id: "purchase-orders",
     name: "Purchase Orders",
     blurb: "Vendor-to-PO workflows with approvals and classic branded PDF output for finance.",
     category: "Supply",
+    href: "/products/purchase-orders",
   },
   {
+    id: "inventory",
     name: "Inventory & Indents",
     blurb: "Stock, GRNs, dispatches, and material request routing with operator-friendly workflows.",
     category: "Supply",
+    href: "/products/inventory",
   },
   {
+    id: "assets",
     name: "Asset Management",
     blurb: "Enterprise asset lifecycle — registration, assignment, maintenance, and disposal.",
     category: "Delivery",
+    href: "/products/assets",
   },
   {
+    id: "projects",
     name: "Projects & Timesheets",
     blurb: "Delivery tracking, transfers, effort capture, and project ratings in one place.",
     category: "Delivery",
+    href: "/products/projects",
   },
   {
+    id: "hr-payroll",
     name: "HR, Attendance & Payroll",
     blurb: "Muster, leave, compensation, payslips, and statutory runs for industrial workforces.",
     category: "People",
+    href: "/products/hr-payroll",
   },
   {
+    id: "expenses",
     name: "Expense Portal",
     blurb: "Employee claims, category controls, and multi-level approval chains.",
     category: "People",
+    href: "/products/expenses",
   },
   {
+    id: "gate-pass",
     name: "Gate Pass",
     blurb: "Visitor and material movement with security check-in and approval trails.",
     category: "People",
+    href: "/products/gate-pass",
   },
 ] as const
 

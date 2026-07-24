@@ -1,5 +1,5 @@
 import { brand } from "../data/content"
-import { getProduct, products } from "../data/products"
+import { allProductPaths, getProduct } from "../data/products"
 
 export type PageMeta = {
   title: string
@@ -52,7 +52,7 @@ export function absoluteUrl(path: string) {
 }
 
 export function allIndexablePaths() {
-  return ["/", ...products.map((p) => `/products/${p.id}`)]
+  return ["/", ...allProductPaths()]
 }
 
 function upsertMeta(

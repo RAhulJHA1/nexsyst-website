@@ -1,4 +1,18 @@
-export type ProductId = "energy" | "alarm" | "audit" | "qc" | "batch" | "oee"
+export type ProductId =
+  | "energy"
+  | "alarm"
+  | "audit"
+  | "qc"
+  | "batch"
+  | "oee"
+  | "crm"
+  | "purchase-orders"
+  | "inventory"
+  | "assets"
+  | "projects"
+  | "hr-payroll"
+  | "expenses"
+  | "gate-pass"
 
 export type ProductDetail = {
   id: ProductId
@@ -14,7 +28,7 @@ export type ProductDetail = {
   features: { title: string; body: string }[]
 }
 
-export const products: ProductDetail[] = [
+export const plantProducts: ProductDetail[] = [
   {
     id: "energy",
     name: "Energy Management",
@@ -515,6 +529,214 @@ export const products: ProductDetail[] = [
   },
 ]
 
+function businessApp(partial: {
+  id: ProductId
+  name: string
+  category: string
+  summary: string
+  whoFor: string
+  heroLine: string
+  points: string[]
+  answer: string
+}): ProductDetail {
+  const { id, name, category, summary, whoFor, heroLine, points, answer } = partial
+  return {
+    id,
+    name,
+    category,
+    summary,
+    whoFor,
+    heroLine,
+    points,
+    answer,
+    whyHelps: [
+      {
+        title: `Why plants choose NexSyst ${name}`,
+        body: `${summary} It lives in the same NexSyst suite as plant apps, so office and floor teams share one system of record.`,
+      },
+      {
+        title: "One login. Shared masters.",
+        body: "Customers, vendors, employees, and assets stay consistent across CRM, procurement, HR, and plant modules — no duplicate spreadsheets.",
+      },
+      {
+        title: "Role-ready workspaces",
+        body: `${whoFor} get focused screens with module permissions instead of one cluttered ERP for everyone.`,
+      },
+      {
+        title: "Start focused, expand later",
+        body: `Begin with NexSyst ${name}, then add plant or business modules as adoption grows — same platform, phased rollout.`,
+      },
+    ],
+    useCases: [
+      {
+        title: "Day-to-day operations",
+        industry: "Process & manufacturing",
+        body: `Teams run ${name.toLowerCase()} workflows in NexSyst instead of email threads and shared drives.`,
+      },
+      {
+        title: "Leadership visibility",
+        industry: "Plant leadership",
+        body: `Managers see status, approvals, and exceptions for ${name} alongside related plant and business KPIs.`,
+      },
+      {
+        title: "Audit-ready history",
+        industry: "Regulated plants",
+        body: `Actions and approvals in NexSyst ${name} leave a clear trail when QA, finance, or auditors ask what changed.`,
+      },
+      {
+        title: "Cross-team handoff",
+        industry: "Sales to delivery",
+        body: `Won work, materials, people, and assets move between modules without re-keying — ${name} stays connected to the suite.`,
+      },
+    ],
+    features: points.map((title) => ({
+      title,
+      body: `Included in NexSyst ${name} on the official suite at nexsyst.in.`,
+    })),
+  }
+}
+
+const businessApps: ProductDetail[] = [
+  businessApp({
+    id: "crm",
+    name: "CRM & Pipeline",
+    category: "Sales",
+    summary:
+      "Customers, opportunities, activities, and lead reports in one sales workspace — from first contact to close.",
+    whoFor: "Sales leaders and account owners who need a repeatable pipeline.",
+    heroLine: "Define and run a repeatable sales process — not a spreadsheet of maybes.",
+    points: [
+      "Customers & accounts",
+      "Opportunities & stages",
+      "Activities & follow-ups",
+      "Lead reports",
+    ],
+    answer:
+      "NexSyst CRM & Pipeline captures customers, opportunities, and activities in one sales workspace so industrial teams move from first contact to close without losing follow-ups.",
+  }),
+  businessApp({
+    id: "purchase-orders",
+    name: "Purchase Orders",
+    category: "Supply",
+    summary:
+      "Vendor-to-PO workflows with approvals and classic branded PDF output your finance team recognizes.",
+    whoFor: "Procurement, stores, and finance teams buying for the plant.",
+    heroLine: "From vendor to approved PO PDF — without email chaos.",
+    points: [
+      "Vendor masters",
+      "PO approvals",
+      "Branded PO PDFs",
+      "Line-item control",
+    ],
+    answer:
+      "NexSyst Purchase Orders manages vendor-to-PO workflows with approvals and branded PDF output so industrial procurement stays controlled and finance-ready.",
+  }),
+  businessApp({
+    id: "inventory",
+    name: "Inventory & Indents",
+    category: "Supply",
+    summary:
+      "Stock, GRNs, dispatches, and material request routing with operator-friendly plant workflows.",
+    whoFor: "Stores and materials teams balancing floor demand and stock accuracy.",
+    heroLine: "Material requests to GRN — stock that matches the floor.",
+    points: [
+      "Material indents",
+      "Stock & GRNs",
+      "Dispatches",
+      "Stores workflows",
+    ],
+    answer:
+      "NexSyst Inventory & Indents tracks stock, GRNs, dispatches, and material requests so plants keep materials moving without spreadsheet inventory.",
+  }),
+  businessApp({
+    id: "assets",
+    name: "Asset Management",
+    category: "Delivery",
+    summary:
+      "Enterprise asset lifecycle — registration, assignment, maintenance history, and disposal.",
+    whoFor: "Maintenance and asset owners protecting capital equipment.",
+    heroLine: "Know what you own, where it is, and when it needs care.",
+    points: [
+      "Asset register",
+      "Assignment history",
+      "Maintenance records",
+      "Disposal tracking",
+    ],
+    answer:
+      "NexSyst Asset Management covers registration, assignment, maintenance, and disposal so industrial teams protect capital equipment across the plant lifecycle.",
+  }),
+  businessApp({
+    id: "projects",
+    name: "Projects & Timesheets",
+    category: "Delivery",
+    summary:
+      "Delivery tracking, transfers, effort capture, and project ratings in one workspace.",
+    whoFor: "Project managers and delivery leads running plant and customer work.",
+    heroLine: "Plan the work, log the hours, finish on the record.",
+    points: [
+      "Project tracking",
+      "Timesheets",
+      "Resource transfers",
+      "Delivery ratings",
+    ],
+    answer:
+      "NexSyst Projects & Timesheets tracks delivery, effort, and transfers so industrial project teams stay aligned from kickoff to close.",
+  }),
+  businessApp({
+    id: "hr-payroll",
+    name: "HR, Attendance & Payroll",
+    category: "People",
+    summary:
+      "Muster, leave, compensation, payslips, and statutory payroll for industrial workforces.",
+    whoFor: "HR and payroll teams running plant headcount and compliance.",
+    heroLine: "From muster roll to payslip — people data that matches the plant.",
+    points: [
+      "Employee masters",
+      "Attendance & leave",
+      "Payroll runs",
+      "Statutory outputs",
+    ],
+    answer:
+      "NexSyst HR, Attendance & Payroll manages muster, leave, compensation, and statutory payslips for industrial plant workforces.",
+  }),
+  businessApp({
+    id: "expenses",
+    name: "Expense Portal",
+    category: "People",
+    summary:
+      "Employee claims, category controls, and multi-level approval chains for plant and travel spend.",
+    whoFor: "Employees and finance controllers approving field and plant expenses.",
+    heroLine: "Submit, approve, and track claims without inbox archaeology.",
+    points: [
+      "Claim submission",
+      "Category controls",
+      "Multi-level approvals",
+      "Spend visibility",
+    ],
+    answer:
+      "NexSyst Expense Portal handles employee claims with category controls and multi-level approvals so plant and travel spend stays auditable.",
+  }),
+  businessApp({
+    id: "gate-pass",
+    name: "Gate Pass",
+    category: "People",
+    summary:
+      "Visitor and material movement with security check-in and approval trails at the gate.",
+    whoFor: "Security and stores controlling who and what enters or leaves the plant.",
+    heroLine: "Visitors and material movement — logged at the gate.",
+    points: [
+      "Visitor passes",
+      "Material movement",
+      "Security check-in",
+      "Approval trails",
+    ],
+    answer:
+      "NexSyst Gate Pass manages visitor and material movement with security check-in and approvals so plant entry and exit stay controlled and recorded.",
+  }),
+]
+
+export const products: ProductDetail[] = [...plantProducts, ...businessApps]
+
 export function getProduct(id: string | undefined): ProductDetail | undefined {
   if (!id) return undefined
   return products.find((p) => p.id === id)
@@ -522,4 +744,9 @@ export function getProduct(id: string | undefined): ProductDetail | undefined {
 
 export function productPath(id: ProductId): string {
   return `/products/${id}`
+}
+
+/** All public product/app detail paths for sitemap and SEO. */
+export function allProductPaths(): string[] {
+  return products.map((p) => productPath(p.id))
 }

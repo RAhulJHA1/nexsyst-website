@@ -160,6 +160,19 @@ export function buildJsonLd(pagePath = "/") {
     })),
   }
 
+  const appList = {
+    "@type": "ItemList",
+    "@id": `${brand.url}/#apps`,
+    name: "NexSyst suite apps — plant and business",
+    itemListElement: products.map((p, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      name: `NexSyst ${p.name}`,
+      url: `${brand.url}/products/${p.id}`,
+      description: p.answer,
+    })),
+  }
+
   const faqPage = {
     "@type": "FAQPage",
     "@id": `${brand.url}/#faq`,
@@ -175,6 +188,6 @@ export function buildJsonLd(pagePath = "/") {
 
   return {
     "@context": "https://schema.org",
-    "@graph": [organization, website, webPage, software, productList, serviceList, faqPage],
+    "@graph": [organization, website, webPage, software, productList, serviceList, appList, faqPage],
   }
 }

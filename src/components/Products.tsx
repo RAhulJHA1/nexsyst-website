@@ -1,16 +1,16 @@
 import { Link } from "react-router-dom"
 import { Activity, BookOpen, FileBarChart, Gauge, ShieldCheck, Zap } from "lucide-react"
 import { FadeItem, HoverLift, MotionSection } from "./Motion"
-import { products, productPath, type ProductId } from "../data/products"
+import { plantProducts, productPath, type ProductId } from "../data/products"
 
-const icons = {
+const icons: Partial<Record<ProductId, typeof Zap>> = {
   energy: Zap,
   alarm: Activity,
   audit: ShieldCheck,
   qc: BookOpen,
   batch: FileBarChart,
   oee: Gauge,
-} as const
+}
 
 export function Products() {
   return (
@@ -37,13 +37,13 @@ export function Products() {
         </FadeItem>
 
         <div className="mt-14 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-          {products.map((product, index) => {
-            const Icon = icons[product.id]
+          {plantProducts.map((product, index) => {
+            const Icon = icons[product.id] ?? Gauge
             return (
               <FadeItem key={product.id}>
                 <HoverLift className="h-full">
                   <Link
-                    to={productPath(product.id as ProductId)}
+                    to={productPath(product.id)}
                     className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-line bg-surface p-7 shadow-[0_1px_0_rgba(12,21,36,0.04)] transition duration-300 hover:border-accent/35 hover:shadow-[0_24px_50px_-28px_rgba(15,159,138,0.45)] md:min-h-[300px]"
                   >
                     <div

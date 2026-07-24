@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 import { FadeItem, HoverLift, MotionSection } from "./Motion"
 import { platformModules } from "../data/content"
 
@@ -25,15 +26,19 @@ export function Platform() {
 
         <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {platformModules.map((mod) => (
-            <FadeItem key={mod.name}>
+            <FadeItem key={mod.id}>
               <HoverLift className="h-full">
-                <div className="flex h-full flex-col rounded-xl border border-line bg-surface p-5 transition duration-300 hover:border-accent/40 hover:bg-surface">
+                <Link
+                  to={mod.href}
+                  className="flex h-full flex-col rounded-xl border border-line bg-surface p-5 transition duration-300 hover:border-accent/40 hover:bg-surface"
+                >
                   <span className="text-[0.65rem] font-semibold uppercase tracking-[0.16em] text-steel">
                     {mod.category}
                   </span>
                   <h3 className="mt-2 font-display text-lg font-bold text-ink">{mod.name}</h3>
                   <p className="mt-2 flex-1 text-sm leading-relaxed text-muted">{mod.blurb}</p>
-                </div>
+                  <span className="mt-4 text-sm font-semibold text-accent">View details →</span>
+                </Link>
               </HoverLift>
             </FadeItem>
           ))}
