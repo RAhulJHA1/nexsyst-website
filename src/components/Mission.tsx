@@ -25,9 +25,13 @@ export function Mission() {
           <FadeItem>
             <p className="text-lg leading-relaxed text-muted md:text-[1.15rem]">
               <strong className="font-semibold text-white">{brand.name}</strong> is the official industrial
-              software brand for manufacturing and process industries. Plant apps cover Energy Management,
-              Alarm Management, Audit Trail, QC Log Book, Batch Report, and OEE. Business apps cover CRM,
-              purchase orders, inventory, assets, projects, HR, payroll, expenses, and gate pass.
+              software brand for manufacturing and process industries. This site —{" "}
+              <a href={brand.url} className="font-semibold text-accent underline-offset-2 hover:underline">
+                {brand.url.replace(/^https?:\/\//, "")}
+              </a>{" "}
+              — is the official {brand.name} website. Plant apps cover Energy Management, Alarm Management,
+              Audit Trail, QC Log Book, Batch Report, and OEE. Business apps cover CRM, purchase orders,
+              inventory, assets, projects, HR, payroll, expenses, and gate pass.
             </p>
             <p className="mt-5 text-lg leading-relaxed text-muted md:text-[1.15rem]">
               We also deliver cloud services, enterprise AI/ML integration, and RAG — so plant knowledge and

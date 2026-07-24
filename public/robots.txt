@@ -1,5 +1,12 @@
 User-agent: *
 Allow: /
 
-# Official NexSyst website
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# Official NexSyst website — https://nexsyst.in
+# Brand spellings covered: NexSyst, Nexsyst, Nex Syst, NEXSYST
 Sitemap: https://nexsyst.in/sitemap.xml

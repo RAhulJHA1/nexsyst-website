@@ -2,36 +2,12 @@ import { Link, Navigate, useParams } from "react-router-dom"
 import { motion, useReducedMotion } from "framer-motion"
 import { ArrowLeft, ArrowRight, CheckCircle2 } from "lucide-react"
 import { FadeItem, MotionSection, easeOut } from "../components/Motion"
-import { brand } from "../data/content"
 import { getProduct, productPath, products, type ProductId } from "../data/products"
-import { useEffect } from "react"
-
-function setPageMeta(title: string, description: string) {
-  document.title = title
-  const desc = document.querySelector('meta[name="description"]')
-  if (desc) desc.setAttribute("content", description)
-}
 
 export function ProductPage() {
   const { productId } = useParams<{ productId: string }>()
   const product = getProduct(productId)
   const reduce = useReducedMotion()
-
-  useEffect(() => {
-    if (!product) return
-    setPageMeta(
-      `NexSyst ${product.name} | Official Product`,
-      product.answer.startsWith("NexSyst")
-        ? product.answer
-        : `NexSyst ${product.name}. ${product.answer}`,
-    )
-    return () => {
-      setPageMeta(
-        brand.shortSeoTitle,
-        brand.description,
-      )
-    }
-  }, [product])
 
   if (!product) {
     return <Navigate to="/#products" replace />
@@ -60,7 +36,7 @@ export function ProductPage() {
               {product.category} · NexSyst product
             </p>
             <h1 className="mt-3 max-w-3xl font-display text-[clamp(2rem,4.5vw,3.4rem)] font-extrabold leading-[1.05] tracking-tight">
-              {product.name}
+              NexSyst {product.name}
             </h1>
             <p className="mt-4 max-w-2xl text-lg leading-relaxed text-white/70">{product.heroLine}</p>
             <p className="mt-3 max-w-2xl text-[1.02rem] leading-relaxed text-white/55">{product.summary}</p>

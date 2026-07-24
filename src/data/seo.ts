@@ -1,27 +1,50 @@
 import { brand, faqs, platformModules, products, services } from "./content"
 
-export function buildJsonLd() {
+export function buildJsonLd(pagePath = "/") {
+  const pageUrl =
+    !pagePath || pagePath === "/"
+      ? `${brand.url}/`
+      : `${brand.url}${pagePath.startsWith("/") ? pagePath : `/${pagePath}`}`
+
   const organization = {
     "@type": "Organization",
     "@id": `${brand.url}/#organization`,
     name: "NexSyst",
     legalName: "NexSyst",
-    alternateName: ["Nexsyst", "Nex Syst", "NexSyst Software"],
+    alternateName: [
+      "Nexsyst",
+      "Nex Syst",
+      "NEXSYST",
+      "NexSyst Software",
+      "NexSyst Official",
+      "nexsyst.in",
+    ],
     url: brand.url,
     email: brand.email,
     description: brand.description,
     slogan: brand.tagline,
+    foundingLocation: {
+      "@type": "Place",
+      name: "India",
+    },
     logo: {
       "@type": "ImageObject",
       url: `${brand.url}/nexsyst-logo.png`,
-      caption: "NexSyst logo — Smart Systems. Better Solutions.",
+      caption: "NexSyst logo — Smart Systems. Better Solutions. Official mark of nexsyst.in",
     },
+    image: `${brand.url}/nexsyst-logo.png`,
     brand: {
       "@type": "Brand",
+      "@id": `${brand.url}/#brand`,
       name: "NexSyst",
+      alternateName: ["Nexsyst", "Nex Syst", "NEXSYST"],
       slogan: brand.tagline,
+      url: brand.url,
+      logo: `${brand.url}/nexsyst-logo.png`,
     },
     knowsAbout: [
+      "NexSyst",
+      "NexSyst official website",
       "NexSyst industrial software",
       "Cloud services",
       "Enterprise AI and machine learning",
@@ -43,12 +66,14 @@ export function buildJsonLd() {
     "@id": `${brand.url}/#website`,
     url: brand.url,
     name: "NexSyst Official Website",
-    alternateName: "NexSyst",
-    description: brand.description,
+    alternateName: ["NexSyst", "Nexsyst", "nexsyst.in", "Nex Syst"],
+    description:
+      "Official website of NexSyst (nexsyst.in) — industrial software suite, cloud services, AI/ML, and RAG.",
     publisher: { "@id": `${brand.url}/#organization` },
-    inLanguage: "en",
+    creator: { "@id": `${brand.url}/#organization` },
     copyrightHolder: { "@id": `${brand.url}/#organization` },
-    copyrightNotice: "© NexSyst. All rights reserved. Original content.",
+    inLanguage: "en",
+    copyrightNotice: "© NexSyst. All rights reserved. Official site: nexsyst.in",
     potentialAction: {
       "@type": "SearchAction",
       target: {
@@ -61,12 +86,18 @@ export function buildJsonLd() {
 
   const webPage = {
     "@type": "WebPage",
-    "@id": `${brand.url}/#webpage`,
-    url: brand.url,
-    name: brand.shortSeoTitle,
+    "@id": `${pageUrl}#webpage`,
+    url: pageUrl,
+    name:
+      pagePath === "/" || pagePath === ""
+        ? "NexSyst | Official Website — nexsyst.in"
+        : `NexSyst | ${pagePath.replace(/^\//, "")}`,
     description: brand.description,
     isPartOf: { "@id": `${brand.url}/#website` },
-    about: { "@id": `${brand.url}/#organization` },
+    about: [
+      { "@id": `${brand.url}/#organization` },
+      { "@id": `${brand.url}/#brand` },
+    ],
     primaryImageOfPage: {
       "@type": "ImageObject",
       url: `${brand.url}/nexsyst-logo.png`,
@@ -74,7 +105,7 @@ export function buildJsonLd() {
     inLanguage: "en",
     speakable: {
       "@type": "SpeakableSpecification",
-      cssSelector: ["#about-heading", "#faq"],
+      cssSelector: ["#mission-heading", "#faq-heading", "#faq"],
     },
   }
 
@@ -82,7 +113,7 @@ export function buildJsonLd() {
     "@type": "SoftwareApplication",
     "@id": `${brand.url}/#software`,
     name: "NexSyst",
-    alternateName: ["NexSyst Suite", "NexSyst Software"],
+    alternateName: ["NexSyst Suite", "NexSyst Software", "Nexsyst"],
     applicationCategory: "BusinessApplication",
     applicationSubCategory: "Industrial / Manufacturing Software",
     operatingSystem: "Web",
@@ -94,13 +125,13 @@ export function buildJsonLd() {
       availability: "https://schema.org/InStock",
       price: "0",
       priceCurrency: "USD",
-      description: "Contact NexSyst for pricing and demo",
+      description: "Contact NexSyst for pricing and demo via the official website nexsyst.in",
     },
     featureList: [...products.map((p) => `NexSyst ${p.name}`), ...platformModules.map((m) => `NexSyst ${m.name}`)].join(
       ", ",
     ),
     provider: { "@id": `${brand.url}/#organization` },
-    brand: { "@type": "Brand", name: "NexSyst" },
+    brand: { "@id": `${brand.url}/#brand` },
   }
 
   const productList = {

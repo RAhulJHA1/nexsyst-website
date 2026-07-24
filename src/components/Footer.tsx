@@ -47,7 +47,11 @@ export function Footer() {
             </motion.div>
           </Link>
           <p className="mt-4 max-w-sm text-sm leading-relaxed text-white/55">
-            Industrial software suite plus cloud, enterprise AI/ML, and RAG — engineering the future.
+            Official {brand.name} website —{" "}
+            <a href={brand.url} className="text-white/70 hover:text-accent">
+              nexsyst.in
+            </a>
+            . Industrial software suite plus cloud, enterprise AI/ML, and RAG.
           </p>
         </div>
 
@@ -73,7 +77,7 @@ export function Footer() {
       <div className="relative border-t border-white/10">
         <div className="section-pad mx-auto flex max-w-6xl flex-col gap-2 py-5 text-xs text-white/40 sm:flex-row sm:justify-between">
           <span>
-            © {new Date().getFullYear()} {brand.name}. All rights reserved. Original content.
+            © {new Date().getFullYear()} {brand.name}. Official site: nexsyst.in. All rights reserved.
           </span>
           <a href={`mailto:${brand.email}`} className="hover:text-accent">
             {brand.email}

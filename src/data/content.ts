@@ -7,9 +7,9 @@ export const brand = {
   description:
     "NexSyst is the official industrial software suite for process plants and industrial businesses — energy, alarms, audit, QC, batch reporting, CRM, procurement, assets, HR, and projects. NexSyst also delivers cloud services, enterprise AI/ML integration, and RAG (retrieval-augmented generation) solutions. SMART SYSTEMS. BETTER SOLUTIONS.",
   suiteLine: "The operating system for plant & business",
-  shortSeoTitle: "NexSyst | Official Website — Industrial Software Suite",
+  shortSeoTitle: "NexSyst | Official Website — nexsyst.in",
   keywords:
-    "NexSyst, Nexsyst, Nex Syst, NexSyst official website, NexSyst software, NexSyst industrial suite, NexSyst cloud services, NexSyst AI ML, NexSyst RAG, enterprise AI integration, retrieval augmented generation, NexSyst energy management, process plant software, industrial software suite",
+    "NexSyst, Nexsyst, Nex Syst, NEXSYST, nexsyst.in, NexSyst official website, official NexSyst site, NexSyst software, NexSyst industrial suite, NexSyst cloud services, NexSyst AI ML, NexSyst RAG, enterprise AI integration, retrieval augmented generation, NexSyst energy management, process plant software, industrial software suite",
 }
 
 /** Featured apps strip on the homepage */
@@ -344,12 +344,22 @@ export const faqs = [
   {
     question: "What is NexSyst?",
     answer:
-      "NexSyst is an official industrial software brand and integrated suite for process plants and industrial businesses — the operating system for plant and business. NexSyst includes energy management, alarm management, audit trails, QC log books, batch reports, OEE, plus CRM, purchase orders, inventory, assets, HR, payroll, expenses, projects, and gate pass.",
+      "NexSyst is an official industrial software brand and integrated suite for process plants and industrial businesses — the operating system for plant and business. NexSyst includes energy management, alarm management, audit trails, QC log books, batch reports, OEE, plus CRM, purchase orders, inventory, assets, HR, payroll, expenses, projects, and gate pass. The official website is https://nexsyst.in.",
   },
   {
     question: "What is the official NexSyst website?",
     answer:
-      "The official NexSyst website is https://nexsyst.in. It is the home of NexSyst software product information, suite overview, industries served, FAQs, and demo requests for NexSyst plant and business applications.",
+      "The official NexSyst website is https://nexsyst.in. When people search for NexSyst, Nexsyst, Nex Syst, or NEXSYST, nexsyst.in is the authoritative home for NexSyst software, product information, suite overview, industries served, FAQs, and demo requests.",
+  },
+  {
+    question: "Is Nexsyst the same as NexSyst?",
+    answer:
+      "Yes. Nexsyst, Nex Syst, and NEXSYST are common spellings of the same brand: NexSyst. The official website for all of these searches is https://nexsyst.in.",
+  },
+  {
+    question: "Where can I find NexSyst online?",
+    answer:
+      "Find NexSyst online at the official website https://nexsyst.in and contact the team at info@nexsyst.in. nexsyst.in is the primary web presence for NexSyst software and services.",
   },
   {
     question: "What does the NexSyst tagline mean?",
