@@ -11,11 +11,18 @@ export type PageMeta = {
 
 const HOME_META: PageMeta = {
   title: "NexSyst | Official Website — nexsyst.in",
-  description:
-    "Official NexSyst website (nexsyst.in). NexSyst industrial software for process plants — Energy, Alarms, Audit, QC, Batch, OEE, CRM — plus cloud, AI/ML, and RAG. SMART SYSTEMS. BETTER SOLUTIONS.",
+  description: brand.metaDescription,
   path: "/",
   keywords: brand.keywords,
   type: "website",
+}
+
+function clipMeta(text: string, max = 155) {
+  const t = text.trim()
+  if (t.length <= max) return t
+  const cut = t.slice(0, max - 1)
+  const at = cut.lastIndexOf(" ")
+  return `${(at > 80 ? cut.slice(0, at) : cut).trimEnd()}…`
 }
 
 export function metaForPath(pathname: string): PageMeta {
@@ -27,11 +34,12 @@ export function metaForPath(pathname: string): PageMeta {
   if (productMatch) {
     const product = getProduct(productMatch[1])
     if (product) {
+      const raw = product.answer.startsWith("NexSyst")
+        ? product.answer
+        : `NexSyst ${product.name}. ${product.answer}`
       return {
-        title: `NexSyst ${product.name} | Official NexSyst Product — nexsyst.in`,
-        description: product.answer.startsWith("NexSyst")
-          ? `${product.answer} Official product page on nexsyst.in.`
-          : `NexSyst ${product.name}. ${product.answer} Official page on nexsyst.in.`,
+        title: `NexSyst ${product.name} | Official Product — nexsyst.in`,
+        description: clipMeta(raw),
         path: `/products/${product.id}`,
         keywords: `NexSyst ${product.name}, NexSyst, Nexsyst, ${product.name} software, nexsyst.in`,
         type: "product",

@@ -12,7 +12,7 @@
     <title>NexSyst | Official Website — nexsyst.in</title>
     <meta
       name="description"
-      content="Official NexSyst website (nexsyst.in). NexSyst industrial software for process plants — Energy, Alarms, Audit, QC, Batch, OEE, CRM — plus cloud services, enterprise AI/ML, and RAG. SMART SYSTEMS. BETTER SOLUTIONS."
+      content="Official NexSyst website. Industrial plant software — Energy, Alarms, QC, Batch, OEE, CRM — plus cloud, AI/ML, and RAG."
     />
     <meta
       name="keywords"
@@ -34,7 +34,7 @@
     <meta property="og:title" content="NexSyst | Official Website — nexsyst.in" />
     <meta
       property="og:description"
-      content="Official NexSyst site (nexsyst.in). One connected suite for plant operations and industrial business — energy, quality, CRM, procurement, people, and projects."
+      content="Official NexSyst website. Industrial plant software — Energy, Alarms, QC, Batch, OEE, CRM — plus cloud, AI/ML, and RAG."
     />
     <meta property="og:image" content="https://nexsyst.in/nexsyst-logo.png" />
     <meta property="og:image:alt" content="NexSyst — Official website nexsyst.in. Smart Systems. Better Solutions." />
@@ -44,13 +44,13 @@
     <meta name="twitter:title" content="NexSyst | Official Website — nexsyst.in" />
     <meta
       name="twitter:description"
-      content="Official NexSyst industrial software suite at nexsyst.in: plant apps + business apps in one platform."
+      content="Official NexSyst website. Industrial plant software plus cloud, AI/ML, and RAG at nexsyst.in."
     />
     <meta name="twitter:image" content="https://nexsyst.in/nexsyst-logo.png" />
 
     <meta
       name="abstract"
-      content="NexSyst official website nexsyst.in — industrial software suite plus cloud services, enterprise AI/ML, and RAG."
+      content="NexSyst official website — industrial software suite, cloud, AI/ML, and RAG."
     />
     <meta name="subject" content="NexSyst official website, industrial software, cloud, AI/ML, RAG" />
     <meta name="classification" content="Industrial Software, Cloud Services, Enterprise AI, RAG" />
@@ -63,7 +63,16 @@
     />
   </head>
   <body>
-    <div id="root"></div>
+    <!-- Static H1 for crawlers that don't run JS (Bing/Google). React replaces #root on load. -->
+    <div id="root">
+      <header>
+        <h1>NexSyst</h1>
+        <p>
+          Official NexSyst website — industrial software for process plants and business teams. Energy, Alarms,
+          Audit, QC, Batch, OEE, CRM, Purchase Orders, and more. SMART SYSTEMS. BETTER SOLUTIONS.
+        </p>
+      </header>
+    </div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

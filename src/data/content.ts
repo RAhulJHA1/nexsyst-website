@@ -8,6 +8,9 @@ export const brand = {
     "NexSyst is the official industrial software suite for process plants and industrial businesses — energy, alarms, audit, QC, batch reporting, CRM, procurement, assets, HR, and projects. NexSyst also delivers cloud services, enterprise AI/ML integration, and RAG (retrieval-augmented generation) solutions. SMART SYSTEMS. BETTER SOLUTIONS.",
   suiteLine: "The operating system for plant & business",
   shortSeoTitle: "NexSyst | Official Website — nexsyst.in",
+  /** Keep ~120–155 chars for Google/Bing snippet limits. */
+  metaDescription:
+    "Official NexSyst website. Industrial plant software — Energy, Alarms, QC, Batch, OEE, CRM — plus cloud, AI/ML, and RAG.",
   keywords:
     "NexSyst, Nexsyst, Nex Syst, NEXSYST, nexsyst.in, NexSyst official website, official NexSyst site, NexSyst software, NexSyst industrial suite, NexSyst cloud services, NexSyst AI ML, NexSyst RAG, enterprise AI integration, retrieval augmented generation, NexSyst energy management, process plant software, industrial software suite",
 }
