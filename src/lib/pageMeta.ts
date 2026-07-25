@@ -25,10 +25,50 @@ function clipMeta(text: string, max = 155) {
   return `${(at > 80 ? cut.slice(0, at) : cut).trimEnd()}…`
 }
 
+const SITE_PAGES: Record<string, PageMeta> = {
+  "/about": {
+    title: "About NexSyst | Official Website — nexsyst.in",
+    description:
+      "About NexSyst — official industrial software brand for process plants. Plant apps and business suite at nexsyst.in.",
+    path: "/about",
+    keywords: "About NexSyst, NexSyst company, NexSyst official, nexsyst.in",
+  },
+  "/services": {
+    title: "NexSyst Services | Cloud, AI/ML, RAG — nexsyst.in",
+    description:
+      "NexSyst services: cloud delivery, enterprise AI/ML integration, and RAG solutions for industrial teams.",
+    path: "/services",
+    keywords: "NexSyst services, NexSyst cloud, NexSyst AI, NexSyst RAG",
+  },
+  "/products": {
+    title: "NexSyst Products & Apps | Official Catalog — nexsyst.in",
+    description:
+      "NexSyst products and apps — Energy, Alarms, QC, Batch, OEE, CRM, Purchase Orders, HR, Assets, and more.",
+    path: "/products",
+    keywords: "NexSyst products, NexSyst apps, industrial software suite",
+  },
+  "/faq": {
+    title: "NexSyst FAQ | Official Answers — nexsyst.in",
+    description:
+      "NexSyst FAQ — what NexSyst is, official website nexsyst.in, products, cloud, AI/ML, RAG, and demos.",
+    path: "/faq",
+    keywords: "NexSyst FAQ, What is NexSyst, nexsyst.in",
+  },
+  "/contact": {
+    title: "Contact NexSyst | Request a Demo — nexsyst.in",
+    description:
+      "Contact NexSyst to request a demo of industrial software, cloud, AI/ML, or RAG. Official form on nexsyst.in.",
+    path: "/contact",
+    keywords: "Contact NexSyst, NexSyst demo, nexsyst.in contact",
+  },
+}
+
 export function metaForPath(pathname: string): PageMeta {
   const clean = pathname.replace(/\/+$/, "") || "/"
 
   if (clean === "/") return HOME_META
+
+  if (SITE_PAGES[clean]) return SITE_PAGES[clean]
 
   const productMatch = clean.match(/^\/products\/([^/]+)$/)
   if (productMatch) {
@@ -60,7 +100,7 @@ export function absoluteUrl(path: string) {
 }
 
 export function allIndexablePaths() {
-  return ["/", ...allProductPaths()]
+  return ["/", "/about", "/services", "/products", "/faq", "/contact", ...allProductPaths()]
 }
 
 function upsertMeta(

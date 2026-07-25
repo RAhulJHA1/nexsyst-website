@@ -18,7 +18,7 @@ export function FeaturedApps() {
                 Run plant and business on one suite
               </h2>
             </div>
-            <Link to="/#products" className="text-sm font-semibold text-steel hover:text-accent-deep">
+            <Link to="/products" className="text-sm font-semibold text-steel hover:text-accent-deep">
               Explore all products →
             </Link>
           </div>

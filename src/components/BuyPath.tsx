@@ -58,7 +58,7 @@ export function BuyPath() {
         <FadeItem>
           <div className="mt-12 flex flex-wrap items-center gap-4">
             <Link
-              to="/#contact"
+              to="/contact"
               className="btn-primary inline-flex items-center gap-2 rounded-md px-6 py-3.5 text-sm font-semibold"
             >
               Start with a demo

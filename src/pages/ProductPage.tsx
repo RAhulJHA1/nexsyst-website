@@ -10,7 +10,7 @@ export function ProductPage() {
   const reduce = useReducedMotion()
 
   if (!product) {
-    return <Navigate to="/#products" replace />
+    return <Navigate to="/products" replace />
   }
 
   const others = products.filter((p) => p.id !== product.id)
@@ -26,7 +26,7 @@ export function ProductPage() {
             transition={{ duration: 0.55, ease: easeOut }}
           >
             <Link
-              to="/#products"
+              to="/products"
               className="inline-flex items-center gap-2 text-sm font-medium text-white/60 transition hover:text-white"
             >
               <ArrowLeft className="h-4 w-4" />
@@ -42,7 +42,7 @@ export function ProductPage() {
             <p className="mt-3 max-w-2xl text-[1.02rem] leading-relaxed text-white/55">{product.summary}</p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link
-                to="/#contact"
+                to="/contact"
                 className="btn-primary inline-flex items-center gap-2 rounded-md px-6 py-3.5 text-sm font-semibold"
               >
                 Request a demo
@@ -166,7 +166,7 @@ export function ProductPage() {
             </div>
             <div className="flex flex-col gap-3 rounded-2xl border border-white/12 bg-surface/[0.06] p-6 backdrop-blur">
               <Link
-                to="/#contact"
+                to="/contact"
                 className="btn-primary inline-flex items-center justify-center gap-2 rounded-md px-5 py-3.5 text-sm font-semibold"
               >
                 Request a demo

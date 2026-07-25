@@ -5,12 +5,11 @@ import { Menu, X } from "lucide-react"
 import { Logo } from "./Logo"
 
 const links = [
-  { to: "/#about", label: "Mission" },
-  { to: "/#products", label: "Products" },
-  { to: "/#services", label: "Services" },
-  { to: "/#stack", label: "Technology" },
-  { to: "/#how", label: "Process" },
-  { to: "/#contact", label: "Contact" },
+  { to: "/about", label: "About" },
+  { to: "/products", label: "Products" },
+  { to: "/services", label: "Services" },
+  { to: "/faq", label: "FAQ" },
+  { to: "/contact", label: "Contact" },
 ]
 
 export function Nav() {
@@ -67,7 +66,7 @@ export function Nav() {
         <div className="flex items-center gap-2">
           <motion.div whileHover={reduce ? undefined : { scale: 1.04 }} whileTap={reduce ? undefined : { scale: 0.98 }}>
             <Link
-              to="/#contact"
+              to="/contact"
               className="btn-primary inline-flex rounded-full px-4 py-2 text-sm font-semibold"
             >
               Talk to us

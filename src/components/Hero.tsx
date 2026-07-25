@@ -165,7 +165,7 @@ export function Hero() {
               whileTap={reduce ? undefined : { scale: 0.98 }}
             >
               <Link
-                to="/#contact"
+                to="/contact"
                 className="btn-primary inline-flex items-center gap-2 rounded-full px-8 py-3.5 text-sm font-semibold shadow-[0_0_40px_rgba(0,229,255,0.25)]"
               >
                 Request a demo
@@ -174,7 +174,7 @@ export function Hero() {
             </motion.div>
             <motion.div whileHover={reduce ? undefined : { y: -4 }} whileTap={reduce ? undefined : { scale: 0.98 }}>
               <Link
-                to="/#products"
+                to="/products"
                 className="glass link-underline inline-flex items-center rounded-full px-7 py-3.5 text-sm font-semibold text-white/90 hover:border-white/25"
               >
                 Explore products

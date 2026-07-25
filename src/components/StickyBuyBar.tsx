@@ -44,7 +44,7 @@ export function StickyBuyBar() {
                 </p>
               </div>
               <Link
-                to="/#contact"
+                to="/contact"
                 className="btn-primary inline-flex shrink-0 items-center gap-2 rounded-md px-4 py-2.5 text-sm font-semibold"
               >
                 Request demo

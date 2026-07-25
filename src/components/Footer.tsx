@@ -56,19 +56,19 @@ export function Footer() {
         </div>
 
         <nav className="flex flex-wrap gap-6 text-sm font-medium text-white/55" aria-label="Footer">
-          <Link to="/#products" className="hover:text-accent">
+          <Link to="/about" className="hover:text-accent">
+            About
+          </Link>
+          <Link to="/products" className="hover:text-accent">
             Products
           </Link>
-          <Link to="/#services" className="hover:text-accent">
+          <Link to="/services" className="hover:text-accent">
             Services
           </Link>
-          <Link to="/#stack" className="hover:text-accent">
-            Technology
-          </Link>
-          <Link to="/#faq" className="hover:text-accent">
+          <Link to="/faq" className="hover:text-accent">
             FAQ
           </Link>
-          <Link to="/#contact" className="hover:text-accent">
+          <Link to="/contact" className="hover:text-accent">
             Contact
           </Link>
         </nav>

@@ -156,7 +156,7 @@ export function buildJsonLd(pagePath = "/") {
       position: i + 1,
       name: s.title,
       description: s.body,
-      url: `${brand.url}/#services`,
+      url: `${brand.url}/services`,
     })),
   }
 
@@ -175,7 +175,8 @@ export function buildJsonLd(pagePath = "/") {
 
   const faqPage = {
     "@type": "FAQPage",
-    "@id": `${brand.url}/#faq`,
+    "@id": `${brand.url}/faq#faq`,
+    url: `${brand.url}/faq`,
     mainEntity: faqs.map((f) => ({
       "@type": "Question",
       name: f.question,
@@ -186,8 +187,22 @@ export function buildJsonLd(pagePath = "/") {
     })),
   }
 
+  const siteNav = {
+    "@type": "SiteNavigationElement",
+    "@id": `${brand.url}/#sitenav`,
+    name: "NexSyst primary navigation",
+    hasPart: [
+      { "@type": "WebPage", name: "Home", url: `${brand.url}/` },
+      { "@type": "WebPage", name: "About", url: `${brand.url}/about` },
+      { "@type": "WebPage", name: "Products", url: `${brand.url}/products` },
+      { "@type": "WebPage", name: "Services", url: `${brand.url}/services` },
+      { "@type": "WebPage", name: "FAQ", url: `${brand.url}/faq` },
+      { "@type": "WebPage", name: "Contact", url: `${brand.url}/contact` },
+    ],
+  }
+
   return {
     "@context": "https://schema.org",
-    "@graph": [organization, website, webPage, software, productList, serviceList, appList, faqPage],
+    "@graph": [organization, website, webPage, software, productList, serviceList, appList, faqPage, siteNav],
   }
 }
