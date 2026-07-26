@@ -1,5 +1,5 @@
 import { motion, useReducedMotion } from "framer-motion"
-import { Cloud, Boxes, Brain, Code2, Container, Server, Workflow } from "lucide-react"
+import { Cloud, Boxes, Brain, Code2, Container, Server } from "lucide-react"
 import { FadeItem, HoverLift, MotionSection } from "./Motion"
 import { Logo } from "./Logo"
 
@@ -10,7 +10,6 @@ const stack = [
   { label: "React", icon: Code2 },
   { label: "Kubernetes", icon: Boxes },
   { label: ".NET", icon: Server },
-  { label: "DevOps", icon: Workflow },
 ] as const
 
 export function TechOrbit() {

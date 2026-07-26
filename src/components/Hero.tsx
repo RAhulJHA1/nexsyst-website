@@ -9,7 +9,7 @@ const HeroScene = lazy(() =>
   import("./HeroScene").then((m) => ({ default: m.HeroScene })),
 )
 
-const pillars = ["AI", "Cloud", "DevOps", "Automation"] as const
+const pillars = ["AI", "Cloud", "Automation"] as const
 
 export function Hero() {
   const reduce = useReducedMotion()

@@ -6,7 +6,6 @@ import { Nav } from "../components/Nav"
 import { Footer } from "../components/Footer"
 import { StickyBuyBar } from "../components/StickyBuyBar"
 import { SmoothScroll } from "../components/SmoothScroll"
-import { Loader } from "../components/Loader"
 import { GlowCursor } from "../components/GlowCursor"
 
 function ScrollToTop() {
@@ -32,7 +31,6 @@ export function SiteLayout() {
     <div className="min-h-svh bg-brand text-ink">
       <Seo />
       <SmoothScroll />
-      <Loader />
       <GlowCursor />
       <ScrollToTop />
       <a
