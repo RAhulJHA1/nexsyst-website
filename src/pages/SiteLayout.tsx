@@ -1,46 +1,44 @@
-import { useEffect } from "react"
 import { Outlet, useLocation } from "react-router-dom"
-import { Seo } from "../components/Seo"
-import { Nav } from "../components/Nav"
-import { Footer } from "../components/Footer"
-import { SmoothScroll, scrollPageTo } from "../components/SmoothScroll"
+import { useEffect } from "react"
 
-function ScrollToTop() {
+/**
+ * Thin shell. Home + module pages own their chrome; legal pages get a simple frame.
+ */
+export function SiteLayout() {
   const { pathname, hash } = useLocation()
+  const isChromePage = pathname === "/" || pathname.startsWith("/modules/")
 
   useEffect(() => {
-    if (hash) {
+    if (hash && pathname === "/") {
       const id = hash.replace("#", "")
-      const el = document.getElementById(id)
-      if (el) {
-        const top = el.getBoundingClientRect().top + window.scrollY - 72
-        scrollPageTo(Math.max(0, top))
-        return
-      }
+      // Wait a tick for home sections to mount after cross-route navigation
+      const t = window.setTimeout(() => {
+        const el = document.getElementById(id)
+        if (el) {
+          const top = el.getBoundingClientRect().top + window.scrollY - 72
+          window.scrollTo({ top: Math.max(0, top), behavior: "smooth" })
+        }
+      }, 50)
+      return () => window.clearTimeout(t)
     }
-    scrollPageTo(0, true)
+    if (!hash) window.scrollTo(0, 0)
   }, [pathname, hash])
 
-  return null
-}
+  if (isChromePage) {
+    return <Outlet />
+  }
 
-export function SiteLayout() {
   return (
-    <div className="min-h-svh bg-black text-white">
-      <Seo />
-      <SmoothScroll />
-      <ScrollToTop />
+    <div className="min-h-svh bg-[#0f1419] text-[#a8b2c1]">
       <a
-        href="#main"
-        className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[70] focus:rounded-full focus:bg-[#3d7eff] focus:px-4 focus:py-2 focus:text-white"
+        href="/"
+        className="section-pad mx-auto flex max-w-6xl items-center gap-2 py-5 text-sm font-semibold text-[#4a9a8e]"
       >
-        Skip to content
+        ← Back to Nexsyst
       </a>
-      <Nav />
-      <main id="main">
+      <main className="section-pad mx-auto max-w-3xl pb-16">
         <Outlet />
       </main>
-      <Footer />
     </div>
   )
 }
