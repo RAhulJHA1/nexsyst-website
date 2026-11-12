@@ -44,7 +44,7 @@ export const plantProducts: ProductDetail[] = [
       "Target vs actual dashboards",
     ],
     answer:
-      "NexSyst Energy Management software monitors plant power in real time, tracks demand and kWh by line or shift, and alerts teams when consumption exceeds targets.",
+      "Nexsyst Energy Management software monitors plant power in real time, tracks demand and kWh by line or shift, and alerts teams when consumption exceeds targets.",
     whyHelps: [
       {
         title: "Turn invoices into action",
@@ -127,7 +127,7 @@ export const plantProducts: ProductDetail[] = [
       "Noise reduction workflows",
     ],
     answer:
-      "NexSyst Alarm Management prioritizes plant alarms by severity, supports acknowledge and escalate workflows, and keeps a clear trail for operators and supervisors.",
+      "Nexsyst Alarm Management prioritizes plant alarms by severity, supports acknowledge and escalate workflows, and keeps a clear trail for operators and supervisors.",
     whyHelps: [
       {
         title: "Reduce alarm flood",
@@ -210,7 +210,7 @@ export const plantProducts: ProductDetail[] = [
       "Recipe & setpoint history",
     ],
     answer:
-      "NexSyst Audit Trail records who changed what and when across users, recipes, and setpoints, with exportable packs for regulated plant environments.",
+      "Nexsyst Audit Trail records who changed what and when across users, recipes, and setpoints, with exportable packs for regulated plant environments.",
     whyHelps: [
       {
         title: "Replace spreadsheet forensics",
@@ -293,7 +293,7 @@ export const plantProducts: ProductDetail[] = [
       "Structured check templates",
     ],
     answer:
-      "NexSyst QC Log Book replaces paper quality binders with digital, batch-linked checks, signatures, and deviation notes for shop-floor and lab teams.",
+      "Nexsyst QC Log Book replaces paper quality binders with digital, batch-linked checks, signatures, and deviation notes for shop-floor and lab teams.",
     whyHelps: [
       {
         title: "Eliminate paper lag",
@@ -376,7 +376,7 @@ export const plantProducts: ProductDetail[] = [
       "Review-friendly layout",
     ],
     answer:
-      "NexSyst Batch Report automatically builds end-of-batch dossiers from process, alarm, and QC data into one reviewable PDF-ready report.",
+      "Nexsyst Batch Report automatically builds end-of-batch dossiers from process, alarm, and QC data into one reviewable PDF-ready report.",
     whyHelps: [
       {
         title: "Kill manual dossier assembly",
@@ -440,7 +440,7 @@ export const plantProducts: ProductDetail[] = [
       },
       {
         title: "Tied to QC & alarms",
-        body: "Designed to consume QC Log Book and Alarm Management context inside the NexSyst suite.",
+        body: "Designed to consume QC Log Book and Alarm Management context inside the Nexsyst suite.",
       },
     ],
   },
@@ -459,7 +459,7 @@ export const plantProducts: ProductDetail[] = [
       "Shift performance boards",
     ],
     answer:
-      "NexSyst OEE modules score availability, performance, and quality against targets with downtime reason codes and trend views for production leadership.",
+      "Nexsyst OEE modules score availability, performance, and quality against targets with downtime reason codes and trend views for production leadership.",
     whyHelps: [
       {
         title: "Stop arguing about the number",
@@ -475,7 +475,7 @@ export const plantProducts: ProductDetail[] = [
       },
       {
         title: "Link to energy and quality",
-        body: "In the NexSyst suite, OEE sits next to energy and QC — so improvement projects consider cost and quality together.",
+        body: "In the Nexsyst suite, OEE sits next to energy and QC — so improvement projects consider cost and quality together.",
       },
     ],
     useCases: [
@@ -551,8 +551,8 @@ function businessApp(partial: {
     answer,
     whyHelps: [
       {
-        title: `Why plants choose NexSyst ${name}`,
-        body: `${summary} It lives in the same NexSyst suite as plant apps, so office and floor teams share one system of record.`,
+        title: `Why plants choose Nexsyst ${name}`,
+        body: `${summary} It lives in the same Nexsyst suite as plant apps, so office and floor teams share one system of record.`,
       },
       {
         title: "One login. Shared masters.",
@@ -564,14 +564,14 @@ function businessApp(partial: {
       },
       {
         title: "Start focused, expand later",
-        body: `Begin with NexSyst ${name}, then add plant or business modules as adoption grows — same platform, phased rollout.`,
+        body: `Begin with Nexsyst ${name}, then add plant or business modules as adoption grows — same platform, phased rollout.`,
       },
     ],
     useCases: [
       {
         title: "Day-to-day operations",
         industry: "Process & manufacturing",
-        body: `Teams run ${name.toLowerCase()} workflows in NexSyst instead of email threads and shared drives.`,
+        body: `Teams run ${name.toLowerCase()} workflows in Nexsyst instead of email threads and shared drives.`,
       },
       {
         title: "Leadership visibility",
@@ -581,7 +581,7 @@ function businessApp(partial: {
       {
         title: "Audit-ready history",
         industry: "Regulated plants",
-        body: `Actions and approvals in NexSyst ${name} leave a clear trail when QA, finance, or auditors ask what changed.`,
+        body: `Actions and approvals in Nexsyst ${name} leave a clear trail when QA, finance, or auditors ask what changed.`,
       },
       {
         title: "Cross-team handoff",
@@ -591,7 +591,7 @@ function businessApp(partial: {
     ],
     features: points.map((title) => ({
       title,
-      body: `Included in NexSyst ${name} on the official suite at nexsyst.in.`,
+      body: `Included in Nexsyst ${name} on the official suite at nexsyst.in.`,
     })),
   }
 }
@@ -612,7 +612,7 @@ const businessApps: ProductDetail[] = [
       "Lead reports",
     ],
     answer:
-      "NexSyst CRM & Pipeline captures customers, opportunities, and activities in one sales workspace so industrial teams move from first contact to close without losing follow-ups.",
+      "Nexsyst CRM & Pipeline captures customers, opportunities, and activities in one sales workspace so industrial teams move from first contact to close without losing follow-ups.",
   }),
   businessApp({
     id: "purchase-orders",
@@ -629,7 +629,7 @@ const businessApps: ProductDetail[] = [
       "Line-item control",
     ],
     answer:
-      "NexSyst Purchase Orders manages vendor-to-PO workflows with approvals and branded PDF output so industrial procurement stays controlled and finance-ready.",
+      "Nexsyst Purchase Orders manages vendor-to-PO workflows with approvals and branded PDF output so industrial procurement stays controlled and finance-ready.",
   }),
   businessApp({
     id: "inventory",
@@ -646,7 +646,7 @@ const businessApps: ProductDetail[] = [
       "Stores workflows",
     ],
     answer:
-      "NexSyst Inventory & Indents tracks stock, GRNs, dispatches, and material requests so plants keep materials moving without spreadsheet inventory.",
+      "Nexsyst Inventory & Indents tracks stock, GRNs, dispatches, and material requests so plants keep materials moving without spreadsheet inventory.",
   }),
   businessApp({
     id: "assets",
@@ -663,7 +663,7 @@ const businessApps: ProductDetail[] = [
       "Disposal tracking",
     ],
     answer:
-      "NexSyst Asset Management covers registration, assignment, maintenance, and disposal so industrial teams protect capital equipment across the plant lifecycle.",
+      "Nexsyst Asset Management covers registration, assignment, maintenance, and disposal so industrial teams protect capital equipment across the plant lifecycle.",
   }),
   businessApp({
     id: "projects",
@@ -680,7 +680,7 @@ const businessApps: ProductDetail[] = [
       "Delivery ratings",
     ],
     answer:
-      "NexSyst Projects & Timesheets tracks delivery, effort, and transfers so industrial project teams stay aligned from kickoff to close.",
+      "Nexsyst Projects & Timesheets tracks delivery, effort, and transfers so industrial project teams stay aligned from kickoff to close.",
   }),
   businessApp({
     id: "hr-payroll",
@@ -697,7 +697,7 @@ const businessApps: ProductDetail[] = [
       "Statutory outputs",
     ],
     answer:
-      "NexSyst HR, Attendance & Payroll manages muster, leave, compensation, and statutory payslips for industrial plant workforces.",
+      "Nexsyst HR, Attendance & Payroll manages muster, leave, compensation, and statutory payslips for industrial plant workforces.",
   }),
   businessApp({
     id: "expenses",
@@ -714,7 +714,7 @@ const businessApps: ProductDetail[] = [
       "Spend visibility",
     ],
     answer:
-      "NexSyst Expense Portal handles employee claims with category controls and multi-level approvals so plant and travel spend stays auditable.",
+      "Nexsyst Expense Portal handles employee claims with category controls and multi-level approvals so plant and travel spend stays auditable.",
   }),
   businessApp({
     id: "gate-pass",
@@ -731,7 +731,7 @@ const businessApps: ProductDetail[] = [
       "Approval trails",
     ],
     answer:
-      "NexSyst Gate Pass manages visitor and material movement with security check-in and approvals so plant entry and exit stay controlled and recorded.",
+      "Nexsyst Gate Pass manages visitor and material movement with security check-in and approvals so plant entry and exit stay controlled and recorded.",
   }),
 ]
 

@@ -8,7 +8,7 @@ export function TrustBar() {
   return (
     <MotionSection className="border-b border-line bg-surface" ariaLabelledBy="trust-heading">
       <h2 id="trust-heading" className="sr-only">
-        Why buyers trust NexSyst
+        Why buyers trust Nexsyst
       </h2>
       <div className="section-pad mx-auto grid max-w-6xl gap-4 py-8 sm:grid-cols-2 lg:grid-cols-4">
         {trustChips.map((chip, i) => {

@@ -16,7 +16,7 @@ export function Suite() {
     >
       <div className="mx-auto max-w-6xl">
         <FadeItem>
-          <p className="text-sm font-semibold uppercase tracking-[0.22em] text-accent-deep">NexSyst One</p>
+          <p className="text-sm font-semibold uppercase tracking-[0.22em] text-accent-deep">Nexsyst One</p>
           <h2
             id="suite-heading"
             className="mt-3 max-w-3xl font-display text-[clamp(1.85rem,3.5vw,2.75rem)] font-bold leading-tight text-ink text-balance"

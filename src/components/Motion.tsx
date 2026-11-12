@@ -11,13 +11,11 @@ import type { ReactNode } from "react"
 export const easeOut = [0.22, 1, 0.36, 1] as const
 
 const fadeUp: Variants = {
-  hidden: { opacity: 0, y: 48, filter: "blur(8px)", scale: 0.98 },
+  hidden: { opacity: 0, y: 24 },
   show: {
     opacity: 1,
     y: 0,
-    filter: "blur(0px)",
-    scale: 1,
-    transition: { duration: 0.95, ease: easeOut },
+    transition: { duration: 0.55, ease: easeOut },
   },
 }
 
@@ -90,12 +88,9 @@ export function HoverLift({
     <motion.div
       className={className}
       whileHover={
-        reduce
-          ? undefined
-          : { y: -8, rotateX: 3, rotateY: -3, transition: { type: "spring", stiffness: 280, damping: 22 } }
+        reduce ? undefined : { y: -3, transition: { type: "spring", stiffness: 320, damping: 24 } }
       }
-      whileTap={reduce ? undefined : { scale: 0.985 }}
-      style={{ transformStyle: "preserve-3d", perspective: 900 }}
+      whileTap={reduce ? undefined : { scale: 0.99 }}
     >
       {children}
     </motion.div>
@@ -115,11 +110,10 @@ export function RevealCard({
   return (
     <motion.div
       className={className}
-      initial={reduce ? false : { opacity: 0, y: 52, rotate: 3, scale: 0.96, filter: "blur(6px)" }}
-      whileInView={{ opacity: 1, y: 0, rotate: 0, scale: 1, filter: "blur(0px)" }}
-      viewport={{ once: true, amount: 0.22 }}
-      transition={{ duration: 0.85, delay, ease: easeOut }}
-      style={{ transformStyle: "preserve-3d" }}
+      initial={reduce ? false : { opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ duration: 0.5, delay, ease: easeOut }}
     >
       {children}
     </motion.div>
@@ -134,7 +128,7 @@ export function ScrollProgress() {
 
   return (
     <motion.div
-      className="fixed inset-x-0 top-0 z-[60] h-[2px] origin-left bg-gradient-to-r from-accent via-accent-deep to-steel"
+      className="fixed inset-x-0 top-0 z-[60] h-[2px] origin-left bg-gradient-to-r from-slate-200 via-slate-400 to-[#050a14]"
       style={{ scaleX }}
       aria-hidden
     />

@@ -2,7 +2,7 @@ import { useState, type FormEvent } from "react"
 import { motion, useReducedMotion } from "framer-motion"
 import { CheckCircle2, Loader2, Send } from "lucide-react"
 import { FadeItem, MotionSection } from "./Motion"
-import { products, serviceInterestOptions } from "../data/content"
+import { erpModules } from "../data/erp"
 import { submitDemoRequest, type DemoRequestPayload } from "../lib/demoApi"
 
 const emptyForm: DemoRequestPayload = {
@@ -16,6 +16,8 @@ const emptyForm: DemoRequestPayload = {
   preferredTime: "",
   website: "",
 }
+
+const interestOptions = erpModules.map((m) => m.name)
 
 export function Contact() {
   const reduce = useReducedMotion()
@@ -49,7 +51,7 @@ export function Contact() {
   }
 
   const fieldClass =
-    "w-full rounded-md border border-white/15 bg-white/5 px-3.5 py-2.5 text-sm text-white placeholder:text-white/35 outline-none transition focus:border-accent/60 focus:bg-white/[0.08]"
+    "w-full rounded-xl border border-white/15 bg-white/5 px-3.5 py-2.5 text-sm text-white placeholder:text-white/35 outline-none transition focus:border-accent/60 focus:bg-white/[0.08]"
 
   return (
     <MotionSection
@@ -57,49 +59,52 @@ export function Contact() {
       className="section-pad relative overflow-hidden py-24 pb-32 md:py-32 md:pb-36"
       ariaLabelledBy="contact-heading"
     >
+      <div className="absolute inset-0 bg-[#050a14]" aria-hidden />
+      <div className="grid-fade-dark pointer-events-none absolute inset-0" aria-hidden />
       <div
-        className="absolute inset-0"
+        className="pointer-events-none absolute inset-0"
         style={{
-          background: "linear-gradient(135deg, #0a1628 0%, #050a14 55%, #0c2438 100%)",
+          background:
+            "radial-gradient(ellipse 50% 40% at 80% 10%, rgba(13,148,136,0.18), transparent 55%)",
         }}
-        aria-hidden
-      />
-      <motion.div
-        className="pointer-events-none absolute -right-20 top-0 h-72 w-72 rounded-full bg-accent/25 blur-3xl"
-        animate={reduce ? undefined : { scale: [1, 1.15, 1], opacity: [0.4, 0.7, 0.4] }}
-        transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
         aria-hidden
       />
 
       <div className="relative mx-auto grid max-w-6xl gap-12 lg:grid-cols-[1fr_1.1fr] lg:items-start">
         <FadeItem>
-          <p className="text-sm font-semibold uppercase tracking-[0.22em] text-accent">Next step</p>
+          <p className="text-sm font-semibold uppercase tracking-[0.22em] text-slate-300">Next step</p>
           <h2
             id="contact-heading"
             className="mt-3 max-w-xl font-display text-[clamp(1.9rem,3.6vw,2.75rem)] font-bold leading-tight text-balance text-white"
           >
-            Request a NexSyst demo — then get a scoped proposal
+            Tell us about one messy Tuesday. We’ll map the walkthrough to it.
           </h2>
-          <p className="mt-4 max-w-md text-lg text-white/60">
-            Share your plant context and which products you need. We reply with next steps for a live walkthrough
-            and a clear commercial path — no pressure checkout.
+          <p className="mt-4 max-w-md text-lg text-white/65">
+            Share your team size, current tools, and which handoffs hurt most — CRM to purchase,
+            attendance to payroll, or ops to Tally. We reply with a scoped demo agenda, not a generic pitch deck.
           </p>
           <ul className="mt-8 space-y-2 text-sm text-white/55">
-            <li className="before:mr-2 before:text-accent before:content-['▸']">Energy, alarms, audit, QC, batch &amp; OEE</li>
-            <li className="before:mr-2 before:text-accent before:content-['▸']">Platform modules: CRM, PO, assets, HR</li>
-            <li className="before:mr-2 before:text-accent before:content-['▸']">Typically a response within one business day</li>
+            <li className="before:mr-2 before:text-slate-400 before:content-['▸']">
+              CRM, PO, Tally, HR, payroll, expense & manufacturing
+            </li>
+            <li className="before:mr-2 before:text-slate-400 before:content-['▸']">
+              Product walkthrough in the real Nexsyst workspace
+            </li>
+            <li className="before:mr-2 before:text-slate-400 before:content-['▸']">
+              Typically a response within one business day
+            </li>
           </ul>
         </FadeItem>
 
         <FadeItem>
           {status === "ok" ? (
-            <div className="rounded-2xl border border-accent/30 bg-white/[0.06] p-8 text-white">
-              <CheckCircle2 className="h-10 w-10 text-accent" aria-hidden />
+            <div className="rounded-2xl border border-[#3d7eff]/35 bg-white/[0.04] p-8 text-white">
+              <CheckCircle2 className="h-10 w-10 text-slate-400" aria-hidden />
               <h3 className="mt-4 font-display text-xl font-bold">Request received</h3>
               <p className="mt-2 text-white/65">{feedback}</p>
               <button
                 type="button"
-                className="mt-6 rounded-md border border-white/20 px-4 py-2 text-sm font-semibold text-white hover:bg-white/5"
+                className="mt-6 rounded-full border border-white/20 px-4 py-2 text-sm font-semibold text-white hover:bg-white/5"
                 onClick={() => {
                   setStatus("idle")
                   setFeedback("")
@@ -111,10 +116,9 @@ export function Contact() {
           ) : (
             <form
               onSubmit={onSubmit}
-              className="rounded-2xl border border-white/12 bg-white/[0.05] p-6 shadow-[0_30px_60px_-40px_rgba(0,0,0,0.8)] backdrop-blur-sm sm:p-8"
+              className="rounded-2xl border border-white/10 bg-[#070d19]/85 p-6 shadow-2xl shadow-black/40 backdrop-blur-md sm:p-8"
               noValidate
             >
-              {/* Honeypot */}
               <input
                 type="text"
                 name="website"
@@ -200,19 +204,19 @@ export function Contact() {
 
               <fieldset className="mt-5">
                 <legend className="mb-2 text-xs font-semibold uppercase tracking-wider text-white/50">
-                  Products & services interested
+                  Modules interested
                 </legend>
                 <div className="flex flex-wrap gap-2">
-                  {[...products.map((p) => p.name), ...serviceInterestOptions].map((name) => {
+                  {interestOptions.map((name) => {
                     const on = form.productsInterested.includes(name)
                     return (
                       <button
                         key={name}
                         type="button"
                         onClick={() => toggleProduct(name)}
-                        className={`rounded-md border px-3 py-1.5 text-xs font-semibold transition ${
+                        className={`rounded-full border px-3 py-1.5 text-xs font-semibold transition ${
                           on
-                            ? "border-accent bg-accent/20 text-accent"
+                            ? "border-white/30 bg-white/10 text-slate-100"
                             : "border-white/15 bg-white/5 text-white/70 hover:border-white/30"
                         }`}
                       >
@@ -230,7 +234,7 @@ export function Contact() {
                 <textarea
                   rows={4}
                   className={`${fieldClass} resize-y`}
-                  placeholder="Plant type, compliance needs, current stack…"
+                  placeholder="Team size, current tools, must-have modules…"
                   value={form.message}
                   onChange={(e) => setForm({ ...form, message: e.target.value })}
                 />
@@ -245,7 +249,7 @@ export function Contact() {
               <motion.button
                 type="submit"
                 disabled={status === "submitting"}
-                className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-md bg-accent px-5 py-3 text-sm font-semibold text-brand disabled:opacity-70 sm:w-auto"
+                className="btn-primary mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full px-5 py-3 text-sm font-semibold disabled:opacity-70 sm:w-auto"
                 whileHover={reduce || status === "submitting" ? undefined : { scale: 1.02 }}
                 whileTap={reduce || status === "submitting" ? undefined : { scale: 0.98 }}
               >

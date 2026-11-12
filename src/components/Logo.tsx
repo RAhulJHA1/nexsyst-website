@@ -5,81 +5,62 @@ type LogoTone = "onDark" | "onLight"
 
 interface LogoProps {
   variant?: LogoVariant
-  /** onDark = white artwork; onLight = inverted for pale surfaces */
   tone?: LogoTone
-  /** Force wordmark visible (footer). */
-  alwaysShowWordmark?: boolean
   className?: string
 }
 
-const MARK = "/nexsyst-mark.png?v=2"
-const FULL = "/nexsyst-logo.png?v=2"
-
-function toneFilter(tone: LogoTone) {
-  return tone === "onLight" ? "brightness(0) opacity(0.92)" : undefined
-}
+const MARK = "/nexsyst-mark.png?v=5"
+const FULL = "/nexsyst-logo.png?v=5"
 
 /**
- * Brand lockup.
- * - full: official logo PNG (header)
- * - nav: mark + NexSyst wordmark + tagline (footer / compact)
+ * Official assets are white-on-dark.
+ * - onDark: use PNG lockup as-is (native brand plate)
+ * - onLight: mark chip + CSS wordmark “Nexsyst” (never cram full PNG into a tiny black pill)
  */
-export function Logo({
-  variant = "nav",
-  tone = "onDark",
-  alwaysShowWordmark = false,
-  className = "",
-}: LogoProps) {
-  const filter = toneFilter(tone)
-  const textClass = tone === "onLight" ? "text-ink" : "text-white"
-
+export function Logo({ variant = "nav", tone = "onDark", className = "" }: LogoProps) {
   if (variant === "mark") {
     return (
-      <img
-        src={MARK}
-        alt={brand.name}
-        width={40}
-        height={40}
-        style={filter ? { filter } : undefined}
-        className={`h-9 w-9 object-contain ${className}`}
-        decoding="async"
-      />
+      <span
+        className={`inline-flex h-10 w-10 overflow-hidden rounded-lg bg-[#050a14] ${className}`}
+      >
+        <img
+          src={MARK}
+          alt={brand.name}
+          width={40}
+          height={40}
+          className="h-full w-full object-cover"
+          decoding="async"
+        />
+      </span>
     )
   }
 
-  if (variant === "full") {
+  if (tone === "onDark" || variant === "full") {
     return (
       <img
         src={FULL}
         alt={brand.name}
         width={372}
         height={135}
-        style={filter ? { filter } : undefined}
-        className={`h-14 w-auto max-w-[min(100%,280px)] object-contain object-left sm:h-16 sm:max-w-[340px] ${className}`}
+        className={
+          variant === "full"
+            ? `h-12 w-auto max-w-[min(100%,320px)] object-contain object-left sm:h-[3.75rem] ${className}`
+            : `h-11 w-auto max-w-[min(100%,240px)] object-contain object-left sm:h-12 sm:max-w-[280px] ${className}`
+        }
         decoding="async"
       />
     )
   }
 
-  const showWordmarkClass = alwaysShowWordmark ? "flex" : "hidden sm:flex"
-  const showRuleClass = alwaysShowWordmark ? "block" : "hidden sm:block"
-
+  // Light surfaces: composed lockup matching logo spelling
   return (
-    <span className={`inline-flex min-w-0 items-center gap-2.5 ${textClass} ${className}`} aria-label={brand.name}>
-      <img
-        src={MARK}
-        alt=""
-        aria-hidden
-        width={36}
-        height={36}
-        style={filter ? { filter } : undefined}
-        className="h-9 w-9 shrink-0 object-contain"
-        decoding="async"
-      />
-      <span className={`h-8 w-px shrink-0 bg-current opacity-25 ${showRuleClass}`} aria-hidden />
-      <span className={`min-w-0 flex-col justify-center gap-0.5 leading-none ${showWordmarkClass}`}>
-        <span className="font-display text-[1.05rem] font-bold tracking-tight">{brand.name}</span>
-        <span className="text-[0.58rem] font-medium uppercase tracking-[0.2em] opacity-50">
+    <span className={`inline-flex items-center gap-2.5 text-[#050a14] ${className}`} aria-label={brand.name}>
+      <span className="inline-flex h-10 w-10 shrink-0 overflow-hidden rounded-lg bg-[#050a14]">
+        <img src={MARK} alt="" aria-hidden width={40} height={40} className="h-full w-full object-cover" decoding="async" />
+      </span>
+      <span className="hidden min-w-0 flex-col leading-none sm:flex">
+        <span className="text-[1.15rem] font-bold tracking-[-0.02em]">{brand.name}</span>
+        <span className="mt-1 text-[0.58rem] font-medium uppercase tracking-[0.2em] text-slate-500">
           {brand.tagline}
         </span>
       </span>

@@ -1,44 +1,26 @@
 import { Hero } from "../components/Hero"
-import { Mission } from "../components/Mission"
-import { Stats } from "../components/Stats"
-import { Products } from "../components/Products"
-import { Services } from "../components/Services"
-import { TechOrbit } from "../components/TechOrbit"
-import { WhyNexSyst } from "../components/WhyNexSyst"
-import { HowItWorks } from "../components/HowItWorks"
-import { GlobalPresence } from "../components/GlobalPresence"
-import { Industries } from "../components/Industries"
-import { SocialProof } from "../components/SocialProof"
-import { BuyPath } from "../components/BuyPath"
-import { Suite } from "../components/Suite"
-import { Platform } from "../components/Platform"
+import { ProblemSection } from "../components/ProblemSection"
+import { ProductTheater } from "../components/ProductTheater"
+import { ModulesStrip } from "../components/ModulesStrip"
+import { ProofBar, InlineQuoteCapture } from "../components/ConversionSections"
+import { CtaBanner } from "../components/CtaBanner"
 import { Faq } from "../components/Faq"
-import { Contact } from "../components/Contact"
 
 /**
- * Cinematic scroll story:
- * Hero → Mission → Stats → Products → Services → Technology → Why → Process →
- * Presence → Industries → Stories → Buy → Suite → Platform → FAQ → Contact
+ * Umenit-inspired rhythm:
+ * black centered hero → proof → product → problem → modules → quote → FAQ → CTA
  */
 export function HomePage() {
   return (
     <>
       <Hero />
-      <Mission />
-      <Stats />
-      <Products />
-      <Services />
-      <TechOrbit />
-      <WhyNexSyst />
-      <HowItWorks />
-      <GlobalPresence />
-      <Industries />
-      <SocialProof />
-      <BuyPath />
-      <Suite />
-      <Platform />
+      <ProofBar />
+      <ProductTheater />
+      <ProblemSection />
+      <ModulesStrip />
+      <InlineQuoteCapture />
       <Faq />
-      <Contact />
+      <CtaBanner />
     </>
   )
 }

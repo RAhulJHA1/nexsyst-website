@@ -1,37 +1,36 @@
-import { FadeItem, MotionSection } from "./Motion"
-import { industries } from "../data/content"
+import { industries } from "../data/erp"
+import { FadeItem, HoverLift, MotionSection } from "./Motion"
+import { SectionHeading } from "./ui/SectionHeading"
 
 export function Industries() {
   return (
-    <MotionSection
-      id="industries"
-      className="section-pad bg-canvas py-24 md:py-28"
-      ariaLabelledBy="industries-heading"
-    >
-      <div className="mx-auto max-w-6xl">
-        <FadeItem>
-          <p className="text-sm font-semibold uppercase tracking-[0.22em] text-accent-deep">Industries</p>
-          <h2
-            id="industries-heading"
-            className="mt-3 max-w-xl font-display text-[clamp(1.75rem,3vw,2.4rem)] font-bold text-ink"
-          >
-            Built for continuous-process environments
-          </h2>
-          <p className="mt-3 max-w-2xl text-lg text-muted">
-            The same suite adapts to how your industry works — compliance depth for pharma, energy and OEE for
-            cement, high-speed KPIs for CPG.
-          </p>
-        </FadeItem>
+    <MotionSection id="industries" ariaLabelledBy="industries-heading" className="section-space bg-white">
+      <div className="section-pad mx-auto max-w-6xl">
+        <SectionHeading
+          id="industries-heading"
+          align="left"
+          eyebrow="Who it’s for"
+          title="Familiar problems, different industries"
+          description="The modules stay the same. The pain points don’t — manufacturing rushes POs; services chase receivables; HR fights month-end."
+        />
 
-        <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {industries.map((ind) => (
-            <FadeItem key={ind.name}>
-              <article className="h-full rounded-xl border border-line bg-surface p-5 shadow-[0_1px_0_rgba(12,21,36,0.04)]">
-                <h3 className="font-display text-lg font-bold text-ink">{ind.name}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted">{ind.blurb}</p>
-              </article>
-            </FadeItem>
-          ))}
+        <div className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          {industries.map((item) => {
+            const Icon = item.icon
+            return (
+              <HoverLift key={item.name}>
+                <FadeItem>
+                  <article className="page-surface group relative overflow-hidden p-5">
+                    <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-[#050a14] text-white">
+                      <Icon className="h-5 w-5" />
+                    </span>
+                    <h3 className="mt-4 text-lg font-bold text-slate-900">{item.name}</h3>
+                    <p className="mt-2 text-sm leading-relaxed text-slate-600">{item.body}</p>
+                  </article>
+                </FadeItem>
+              </HoverLift>
+            )
+          })}
         </div>
       </div>
     </MotionSection>

@@ -17,7 +17,7 @@ export function ProductPage() {
 
   return (
     <>
-      <header className="mesh-hero relative overflow-hidden pb-16 pt-28 text-white md:pb-20 md:pt-32">
+      <header className="mesh-dark relative overflow-hidden pb-16 pt-28 text-white md:pb-20 md:pt-32">
         <div className="grid-fade pointer-events-none absolute inset-0" aria-hidden />
         <div className="section-pad relative mx-auto max-w-6xl">
           <motion.div
@@ -33,10 +33,10 @@ export function ProductPage() {
               All products
             </Link>
             <p className="mt-6 text-sm font-semibold uppercase tracking-[0.22em] text-accent">
-              {product.category} · NexSyst product
+              {product.category} · Nexsyst product
             </p>
             <h1 className="mt-3 max-w-3xl font-display text-[clamp(2rem,4.5vw,3.4rem)] font-extrabold leading-[1.05] tracking-tight">
-              NexSyst {product.name}
+              Nexsyst {product.name}
             </h1>
             <p className="mt-4 max-w-2xl text-lg leading-relaxed text-white/70">{product.heroLine}</p>
             <p className="mt-3 max-w-2xl text-[1.02rem] leading-relaxed text-white/55">{product.summary}</p>

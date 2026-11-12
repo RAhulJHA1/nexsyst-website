@@ -1,7 +1,7 @@
 import { FadeItem, MotionSection } from "./Motion"
-import { whyNexSyst } from "../data/content"
+import { whyNexsyst } from "../data/content"
 
-export function WhyNexSyst() {
+export function WhyNexsyst() {
   return (
     <MotionSection
       id="why"
@@ -10,7 +10,7 @@ export function WhyNexSyst() {
     >
       <div className="mx-auto max-w-6xl">
         <FadeItem>
-          <p className="text-sm font-semibold uppercase tracking-[0.22em] text-accent">Why NexSyst</p>
+          <p className="text-sm font-semibold uppercase tracking-[0.22em] text-accent">Why Nexsyst</p>
           <h2
             id="why-heading"
             className="mt-3 max-w-2xl font-display text-[clamp(1.85rem,3.5vw,2.6rem)] font-bold leading-tight text-balance"
@@ -18,13 +18,13 @@ export function WhyNexSyst() {
             Suite power without the silo tax
           </h2>
           <p className="mt-4 max-w-2xl text-lg text-white/60">
-            Stop stitching together separate tools for CRM, QC, energy, and payroll. NexSyst is one connected
+            Stop stitching together separate tools for CRM, QC, energy, and payroll. Nexsyst is one connected
             system — familiar suite thinking, industrial DNA.
           </p>
         </FadeItem>
 
         <div className="mt-14 grid gap-6 md:grid-cols-2">
-          {whyNexSyst.map((item) => (
+          {whyNexsyst.map((item) => (
             <FadeItem key={item.title}>
               <article className="h-full rounded-xl border border-white/10 bg-white/[0.04] p-6">
                 <h3 className="font-display text-xl font-bold">{item.title}</h3>

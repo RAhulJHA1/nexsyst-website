@@ -45,7 +45,7 @@ export function Stats() {
       ariaLabelledBy="stats-heading"
     >
       <h2 id="stats-heading" className="sr-only">
-        NexSyst delivery metrics
+        Nexsyst delivery metrics
       </h2>
       <div className="section-pad mx-auto grid max-w-6xl grid-cols-2 gap-8 py-16 sm:grid-cols-4">
         {stats.map((stat, i) => (

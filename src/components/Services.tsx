@@ -47,7 +47,7 @@ export function Services() {
             Cloud, AI/ML, RAG, and industrial software — delivered end to end
           </h2>
           <p className="mt-4 max-w-2xl text-lg leading-relaxed text-white/55">
-            Beyond the NexSyst product suite — cloud, enterprise AI/ML, RAG, OT–IT engineering, and secure
+            Beyond the Nexsyst product suite — cloud, enterprise AI/ML, RAG, OT–IT engineering, and secure
             delivery with ongoing support.
           </p>
         </FadeItem>

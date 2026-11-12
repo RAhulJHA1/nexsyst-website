@@ -10,7 +10,7 @@ export type PageMeta = {
 }
 
 const HOME_META: PageMeta = {
-  title: "NexSyst | Official Website — nexsyst.in",
+  title: brand.shortSeoTitle,
   description: brand.metaDescription,
   path: "/",
   keywords: brand.keywords,
@@ -27,39 +27,58 @@ function clipMeta(text: string, max = 155) {
 
 const SITE_PAGES: Record<string, PageMeta> = {
   "/about": {
-    title: "About NexSyst | Official Website — nexsyst.in",
+    title: "About Nexsyst | Business ERP Platform — nexsyst.in",
     description:
-      "About NexSyst — official industrial software brand for process plants. Plant apps and business suite at nexsyst.in.",
+      "About Nexsyst — all-in-one business ERP connecting CRM, purchasing, accounting, payroll, and analytics.",
     path: "/about",
-    keywords: "About NexSyst, NexSyst company, NexSyst official, nexsyst.in",
+    keywords: "About Nexsyst, Nexsyst ERP, nexsyst.in",
   },
   "/services": {
-    title: "NexSyst Services | Cloud, AI/ML, RAG — nexsyst.in",
+    title: "Nexsyst Services | Implementation & Integrations — nexsyst.in",
     description:
-      "NexSyst services: cloud delivery, enterprise AI/ML integration, and RAG solutions for industrial teams.",
+      "Nexsyst services: ERP implementation, Tally integration, payroll go-live, and executive analytics.",
     path: "/services",
-    keywords: "NexSyst services, NexSyst cloud, NexSyst AI, NexSyst RAG",
+    keywords: "Nexsyst services, ERP implementation, Tally integration",
   },
   "/products": {
-    title: "NexSyst Products & Apps | Official Catalog — nexsyst.in",
+    title: "Nexsyst ERP Modules | CRM, PO, Payroll & More — nexsyst.in",
     description:
-      "NexSyst products and apps — Energy, Alarms, QC, Batch, OEE, CRM, Purchase Orders, HR, Assets, and more.",
+      "Explore Nexsyst ERP modules — CRM, purchase orders, accounting, attendance, payroll, leave, and BI.",
     path: "/products",
-    keywords: "NexSyst products, NexSyst apps, industrial software suite",
+    keywords: "Nexsyst products, ERP modules, CRM, payroll, purchase orders",
   },
   "/faq": {
-    title: "NexSyst FAQ | Official Answers — nexsyst.in",
+    title: "Nexsyst FAQ | Official Answers — nexsyst.in",
     description:
-      "NexSyst FAQ — what NexSyst is, official website nexsyst.in, products, cloud, AI/ML, RAG, and demos.",
+      "Nexsyst FAQ — what Nexsyst ERP is, modules, pricing path, and how to request a demo.",
     path: "/faq",
-    keywords: "NexSyst FAQ, What is NexSyst, nexsyst.in",
+    keywords: "Nexsyst FAQ, What is Nexsyst, nexsyst.in",
   },
   "/contact": {
-    title: "Contact NexSyst | Request a Demo — nexsyst.in",
+    title: "Book a Nexsyst Demo — nexsyst.in",
     description:
-      "Contact NexSyst to request a demo of industrial software, cloud, AI/ML, or RAG. Official form on nexsyst.in.",
+      "Book a 30-minute Nexsyst walkthrough mapped to your CRM, purchase, payroll, or Tally workflows.",
     path: "/contact",
-    keywords: "Contact NexSyst, NexSyst demo, nexsyst.in contact",
+    keywords: "Nexsyst demo, book demo, nexsyst.in contact",
+  },
+  "/quote": {
+    title: "Request a Nexsyst Quotation — nexsyst.in",
+    description:
+      "Request a scoped Nexsyst quotation — modules, users, hosting, and implementation for your business.",
+    path: "/quote",
+    keywords: "Nexsyst quotation, ERP pricing, request quote, nexsyst.in",
+  },
+  "/privacy": {
+    title: "Privacy Policy | Nexsyst — nexsyst.in",
+    description: "How Nexsyst handles website enquiry and quotation data.",
+    path: "/privacy",
+    keywords: "Nexsyst privacy policy",
+  },
+  "/terms": {
+    title: "Terms & Conditions | Nexsyst — nexsyst.in",
+    description: "Website terms, quotations, and commercial boundaries for Nexsyst.",
+    path: "/terms",
+    keywords: "Nexsyst terms and conditions",
   },
 }
 
@@ -74,14 +93,14 @@ export function metaForPath(pathname: string): PageMeta {
   if (productMatch) {
     const product = getProduct(productMatch[1])
     if (product) {
-      const raw = product.answer.startsWith("NexSyst")
+      const raw = product.answer.startsWith("Nexsyst")
         ? product.answer
-        : `NexSyst ${product.name}. ${product.answer}`
+        : `Nexsyst ${product.name}. ${product.answer}`
       return {
-        title: `NexSyst ${product.name} | Official Product — nexsyst.in`,
+        title: `Nexsyst ${product.name} | Official Product — nexsyst.in`,
         description: clipMeta(raw),
         path: `/products/${product.id}`,
-        keywords: `NexSyst ${product.name}, NexSyst, Nexsyst, ${product.name} software, nexsyst.in`,
+        keywords: `Nexsyst ${product.name}, Nexsyst, Nexsyst, ${product.name} software, nexsyst.in`,
         type: "product",
       }
     }
@@ -142,8 +161,8 @@ export function applyPageMeta(meta: PageMeta) {
     "name",
     "keywords",
   )
-  upsertMeta('meta[name="author"]', { content: "NexSyst" }, "name", "author")
-  upsertMeta('meta[name="copyright"]', { content: "NexSyst" }, "name", "copyright")
+  upsertMeta('meta[name="author"]', { content: "Nexsyst" }, "name", "author")
+  upsertMeta('meta[name="copyright"]', { content: "Nexsyst" }, "name", "copyright")
   upsertMeta(
     'meta[name="robots"]',
     { content: "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" },
@@ -156,7 +175,7 @@ export function applyPageMeta(meta: PageMeta) {
   upsertLink("canonical", url)
 
   upsertMeta('meta[property="og:type"]', { content: meta.type === "product" ? "website" : "website" }, "property", "og:type")
-  upsertMeta('meta[property="og:site_name"]', { content: "NexSyst" }, "property", "og:site_name")
+  upsertMeta('meta[property="og:site_name"]', { content: "Nexsyst" }, "property", "og:site_name")
   upsertMeta('meta[property="og:locale"]', { content: "en_US" }, "property", "og:locale")
   upsertMeta('meta[property="og:url"]', { content: url }, "property", "og:url")
   upsertMeta('meta[property="og:title"]', { content: meta.title }, "property", "og:title")
@@ -164,7 +183,7 @@ export function applyPageMeta(meta: PageMeta) {
   upsertMeta('meta[property="og:image"]', { content: image }, "property", "og:image")
   upsertMeta(
     'meta[property="og:image:alt"]',
-    { content: "NexSyst — Official website nexsyst.in. Smart Systems. Better Solutions." },
+    { content: "Nexsyst — Official website nexsyst.in. Smart Systems. Better Solutions." },
     "property",
     "og:image:alt",
   )

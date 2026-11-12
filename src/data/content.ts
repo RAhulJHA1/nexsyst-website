@@ -1,18 +1,18 @@
 export const brand = {
-  name: "NexSyst",
+  name: "Nexsyst",
   tagline: "SMART SYSTEMS. BETTER SOLUTIONS.",
   /** Public marketing URL — update when the site is deployed. */
   url: "https://nexsyst.in",
   email: "info@nexsyst.in",
   description:
-    "NexSyst is the official industrial software suite for process plants and industrial businesses — energy, alarms, audit, QC, batch reporting, CRM, procurement, assets, HR, and projects. NexSyst also delivers cloud services, enterprise AI/ML integration, and RAG (retrieval-augmented generation) solutions. SMART SYSTEMS. BETTER SOLUTIONS.",
-  suiteLine: "The operating system for plant & business",
-  shortSeoTitle: "NexSyst | Official Website — nexsyst.in",
+    "Nexsyst is the all-in-one business workspace for CRM, purchase orders, Tally sync, HR, payroll, expense, inventory, assets, manufacturing, and AI costing — the same product teams use in production. SMART SYSTEMS. BETTER SOLUTIONS.",
+  suiteLine: "One workspace for customers, purchases, and people",
+  shortSeoTitle: "Nexsyst | All-in-One Business ERP — nexsyst.in",
   /** Keep ~120–155 chars for Google/Bing snippet limits. */
   metaDescription:
-    "Official NexSyst website. Industrial plant software — Energy, Alarms, QC, Batch, OEE, CRM — plus cloud, AI/ML, and RAG.",
+    "Nexsyst — one workspace for CRM, PO, Tally, HR, payroll, expense, and manufacturing. The business ERP your teams already use.",
   keywords:
-    "NexSyst, Nexsyst, Nex Syst, NEXSYST, nexsyst.in, NexSyst official website, official NexSyst site, NexSyst software, NexSyst industrial suite, NexSyst cloud services, NexSyst AI ML, NexSyst RAG, enterprise AI integration, retrieval augmented generation, NexSyst energy management, process plant software, industrial software suite",
+    "Nexsyst, Nexsyst, ERP software, CRM, purchase orders, Tally sync, payroll, HR, expense, manufacturing, nexsyst.in",
 }
 
 /** Featured apps strip on the homepage */
@@ -164,7 +164,7 @@ export const platformModules = [
   },
 ] as const
 
-export const whyNexSyst = [
+export const whyNexsyst = [
   {
     title: "One suite. Zero silos.",
     body: "Plant, sales, procurement, people, and projects share the same identity, permissions, and customer/vendor masters — one operating system for your business, not a pile of disconnected tools.",
@@ -197,7 +197,7 @@ export const howItWorks = [
   {
     step: "03",
     title: "Develop",
-    body: "Build NexSyst apps, cloud services, AI/ML pipelines, and RAG knowledge layers with iterative demos.",
+    body: "Build Nexsyst apps, cloud services, AI/ML pipelines, and RAG knowledge layers with iterative demos.",
   },
   {
     step: "04",
@@ -214,7 +214,7 @@ export const howItWorks = [
 export const services = [
   {
     title: "Cloud Services",
-    body: "Design, migrate, and operate NexSyst and enterprise workloads in the cloud — secure hosting, environments, backups, scaling, and managed delivery for industrial teams.",
+    body: "Design, migrate, and operate Nexsyst and enterprise workloads in the cloud — secure hosting, environments, backups, scaling, and managed delivery for industrial teams.",
   },
   {
     title: "AI & ML for Enterprise",
@@ -234,7 +234,7 @@ export const services = [
   },
   {
     title: "Digital Transformation",
-    body: "Roadmaps that replace paper QC, manual batch books, and siloed alarms with connected NexSyst modules and modern cloud delivery.",
+    body: "Roadmaps that replace paper QC, manual batch books, and siloed alarms with connected Nexsyst modules and modern cloud delivery.",
   },
   {
     title: "Secure Platform Delivery",
@@ -255,7 +255,7 @@ export const serviceInterestOptions = [
   "Cloud Services",
   "AI & ML for Enterprise",
   "RAG Solutions",
-  "Full NexSyst Suite",
+  "Full Nexsyst Suite",
 ] as const
 
 export const industries = [
@@ -358,76 +358,76 @@ export const purchaseComfort = [
   },
 ] as const
 
-/** Answer-engine friendly FAQs — plain, direct answers. Brand-first for NexSyst search. */
+/** Answer-engine friendly FAQs — plain, direct answers. Brand-first for Nexsyst search. */
 export const faqs = [
   {
-    question: "What is NexSyst?",
+    question: "What is Nexsyst?",
     answer:
-      "NexSyst is an official industrial software brand and integrated suite for process plants and industrial businesses — the operating system for plant and business. NexSyst includes energy management, alarm management, audit trails, QC log books, batch reports, OEE, plus CRM, purchase orders, inventory, assets, HR, payroll, expenses, projects, and gate pass. The official website is https://nexsyst.in.",
+      "Nexsyst is an all-in-one business ERP and management platform. It connects CRM, purchase orders, accounting and Tally integration, attendance, payroll, leave, employee management, sales and purchase, payments and receivables, and business intelligence in one ecosystem. The official website is https://nexsyst.in.",
   },
   {
-    question: "What is the official NexSyst website?",
+    question: "What is the official Nexsyst website?",
     answer:
-      "The official NexSyst website is https://nexsyst.in. When people search for NexSyst, Nexsyst, Nex Syst, or NEXSYST, nexsyst.in is the authoritative home for NexSyst software, product information, suite overview, industries served, FAQs, and demo requests.",
+      "The official Nexsyst website is https://nexsyst.in. When people search for Nexsyst, Nexsyst, Nex Syst, or NEXSYST, nexsyst.in is the authoritative home for Nexsyst software, product information, suite overview, industries served, FAQs, and demo requests.",
   },
   {
-    question: "Is Nexsyst the same as NexSyst?",
+    question: "Is Nexsyst the same as Nexsyst?",
     answer:
-      "Yes. Nexsyst, Nex Syst, and NEXSYST are common spellings of the same brand: NexSyst. The official website for all of these searches is https://nexsyst.in.",
+      "Yes. Nexsyst, Nex Syst, and NEXSYST are common spellings of the same brand: Nexsyst. The official website for all of these searches is https://nexsyst.in.",
   },
   {
-    question: "Where can I find NexSyst online?",
+    question: "Where can I find Nexsyst online?",
     answer:
-      "Find NexSyst online at the official website https://nexsyst.in and contact the team at info@nexsyst.in. nexsyst.in is the primary web presence for NexSyst software and services.",
+      "Find Nexsyst online at the official website https://nexsyst.in and contact the team at info@nexsyst.in. nexsyst.in is the primary web presence for Nexsyst software and services.",
   },
   {
-    question: "What does the NexSyst tagline mean?",
+    question: "What does the Nexsyst tagline mean?",
     answer:
-      "The NexSyst tagline is SMART SYSTEMS. BETTER SOLUTIONS. It reflects NexSyst’s focus on practical industrial software that improves plant visibility, compliance, and business operations.",
+      "The Nexsyst tagline is SMART SYSTEMS. BETTER SOLUTIONS. It reflects Nexsyst’s focus on practical industrial software that improves plant visibility, compliance, and business operations.",
   },
   {
-    question: "What products does NexSyst offer?",
+    question: "What products does Nexsyst offer?",
     answer:
-      "NexSyst plant products include Energy Management, Alarm Management, Audit Trail, QC Log Book, Batch Report, and OEE. NexSyst business modules include CRM, Purchase Orders, Inventory & Indents, Asset Management, Projects, HR/Attendance/Payroll, Expense Portal, and Gate Pass.",
+      "Nexsyst ERP modules include CRM, Purchase Order Management, Accounting / Tally Integration, Attendance, Payroll, Leave, Employee Management, Sales & Purchase, Payment & Receivables, and Business Intelligence & Analytics.",
   },
   {
-    question: "Does NexSyst provide cloud, AI/ML, and RAG services?",
+    question: "Does Nexsyst provide cloud, AI/ML, and RAG services?",
     answer:
-      "Yes. NexSyst provides cloud services for secure hosting and managed delivery, enterprise AI and machine learning integration for plant and business workflows, and RAG (retrieval-augmented generation) solutions that answer from your own SOPs, manuals, and operational documents.",
+      "Yes. Nexsyst provides cloud services for secure hosting and managed delivery, enterprise AI and machine learning integration for plant and business workflows, and RAG (retrieval-augmented generation) solutions that answer from your own SOPs, manuals, and operational documents.",
   },
   {
-    question: "What is NexSyst RAG?",
+    question: "What is Nexsyst RAG?",
     answer:
-      "NexSyst RAG is a retrieval-augmented generation service: enterprise documents and plant knowledge are indexed so AI answers stay grounded in your content with relevant context — useful for SOPs, QC guidance, maintenance manuals, and policy Q&A.",
+      "Nexsyst RAG is a retrieval-augmented generation service: enterprise documents and plant knowledge are indexed so AI answers stay grounded in your content with relevant context — useful for SOPs, QC guidance, maintenance manuals, and policy Q&A.",
   },
   {
-    question: "Who is NexSyst for?",
+    question: "Who is Nexsyst for?",
     answer:
-      "NexSyst is built for process industries including pharmaceuticals, chemical, cement, metals and mining, CPG, water treatment, and automotive — from operators and QA to sales, stores, HR, and leadership.",
+      "Nexsyst is built for process industries including pharmaceuticals, chemical, cement, metals and mining, CPG, water treatment, and automotive — from operators and QA to sales, stores, HR, and leadership.",
   },
   {
-    question: "How is NexSyst different from generic plant software?",
+    question: "How is Nexsyst different from generic plant software?",
     answer:
-      "NexSyst connects plant intelligence — energy, alarms, audit, QC, and batch reporting — with CRM, purchase orders, assets, and people in one workspace. That OT–IT link is designed for industrial teams, not office-only tools.",
+      "Nexsyst connects plant intelligence — energy, alarms, audit, QC, and batch reporting — with CRM, purchase orders, assets, and people in one workspace. That OT–IT link is designed for industrial teams, not office-only tools.",
   },
   {
-    question: "Can we start with a few NexSyst apps and expand?",
+    question: "Can we start with a few Nexsyst apps and expand?",
     answer:
-      "Yes. Most plants start with NexSyst plant modules (for example Energy + QC + Batch) or business modules (CRM + purchase orders), then add payroll, assets, or OEE as adoption grows — the same NexSyst suite, phased rollout.",
+      "Yes. Most plants start with Nexsyst plant modules (for example Energy + QC + Batch) or business modules (CRM + purchase orders), then add payroll, assets, or OEE as adoption grows — the same Nexsyst suite, phased rollout.",
   },
   {
-    question: "Does NexSyst support audit and compliance?",
+    question: "Does Nexsyst support audit and compliance?",
     answer:
-      "Yes. NexSyst Audit Trail captures who changed what and when. NexSyst QC Log Book and Batch Report support digital quality records and end-of-batch dossiers suitable for regulated environments.",
+      "Yes. Nexsyst Audit Trail captures who changed what and when. Nexsyst QC Log Book and Batch Report support digital quality records and end-of-batch dossiers suitable for regulated environments.",
   },
   {
-    question: "How do I purchase NexSyst software?",
+    question: "How do I purchase Nexsyst software?",
     answer:
-      "Request a NexSyst demo on this official website. After a walkthrough, you receive a scoped proposal covering modules, users, hosting, timeline, and AMC. Most plants start with a pilot of one or two NexSyst products, then expand.",
+      "Request a Nexsyst demo on this official website. After a walkthrough, you receive a scoped proposal covering modules, users, hosting, timeline, and AMC. Most plants start with a pilot of one or two Nexsyst products, then expand.",
   },
   {
-    question: "How do I request a NexSyst demo?",
+    question: "How do I request a Nexsyst demo?",
     answer:
-      "Use the Request a demo form on the official NexSyst website. Your details are emailed to the NexSyst team so we can map a rollout to your plant and compliance needs.",
+      "Use the Request a demo form on the official Nexsyst website. Your details are emailed to the Nexsyst team so we can map a rollout to your plant and compliance needs.",
   },
 ] as const

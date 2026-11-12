@@ -6,19 +6,26 @@ type PageHeroProps = {
   description: string
 }
 
-/** Shared page header with a real H1 for sitelink / crawl pages. */
+/** Inner-page header matching the black umenit-style plate. */
 export function PageHero({ eyebrow, title, description }: PageHeroProps) {
   return (
-    <header className="mesh-hero relative overflow-hidden border-b border-line pb-14 pt-28 text-white md:pb-16 md:pt-32">
-      <div className="grid-fade pointer-events-none absolute inset-0 opacity-70" aria-hidden />
+    <header className="relative overflow-hidden border-b border-white/10 bg-black pb-12 pt-28 md:pb-14 md:pt-32">
+      <div
+        className="pointer-events-none absolute inset-0"
+        style={{
+          background:
+            "radial-gradient(ellipse 60% 50% at 50% 0%, rgba(61,126,255,0.14), transparent 55%)",
+        }}
+        aria-hidden
+      />
       <div className="section-pad relative mx-auto max-w-6xl">
-        <p className="text-sm font-semibold uppercase tracking-[0.22em] text-accent">{eyebrow}</p>
-        <h1 className="mt-3 max-w-3xl font-display text-[clamp(2rem,4.5vw,3.25rem)] font-extrabold leading-[1.05] tracking-tight">
+        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#8eb4ff]">{eyebrow}</p>
+        <h1 className="mt-3 max-w-3xl text-[clamp(1.85rem,4vw,2.75rem)] font-bold leading-[1.1] tracking-[-0.02em] text-white">
           {title}
         </h1>
-        <p className="mt-4 max-w-2xl text-lg leading-relaxed text-white/65">{description}</p>
-        <p className="mt-6 text-sm text-white/40">
-          <Link to="/" className="hover:text-accent">
+        <p className="mt-3 max-w-2xl text-base leading-relaxed text-white/55">{description}</p>
+        <p className="mt-5 text-sm text-white/40">
+          <Link to="/" className="hover:text-white">
             Home
           </Link>
           <span className="mx-2">/</span>

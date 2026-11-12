@@ -1,21 +1,32 @@
 import { PageHero } from "../components/PageHero"
-import { Mission } from "../components/Mission"
-import { WhyNexSyst } from "../components/WhyNexSyst"
-import { Stats } from "../components/Stats"
-import { GlobalPresence } from "../components/GlobalPresence"
+import { WhyChooseErp } from "../components/WhyChooseErp"
+import { Ecosystem } from "../components/Ecosystem"
+import { CtaBanner } from "../components/CtaBanner"
+import { FadeItem, MotionSection } from "../components/Motion"
+import { brand } from "../data/content"
 
 export function AboutPage() {
   return (
     <>
       <PageHero
         eyebrow="About"
-        title="About NexSyst"
-        description="NexSyst is the official industrial software brand for process plants and industrial businesses — plant intelligence and business apps in one suite."
+        title={`About ${brand.name}`}
+        description="Nexsyst is an all-in-one business ERP — connecting customers, purchasing, accounting, people, and analytics in one intelligent platform."
       />
-      <Mission />
-      <Stats />
-      <WhyNexSyst />
-      <GlobalPresence />
+      <MotionSection className="section-space">
+        <div className="section-pad mx-auto max-w-3xl text-center">
+          <FadeItem>
+            <p className="text-lg leading-relaxed text-muted sm:text-xl">
+              We build software for operators who are done stitching together CRM, spreadsheets,
+              Tally exports, attendance tools, and payroll runs. {brand.name} is the connected
+              system of record — so every department works from the same live picture of the business.
+            </p>
+          </FadeItem>
+        </div>
+      </MotionSection>
+      <Ecosystem />
+      <WhyChooseErp />
+      <CtaBanner />
     </>
   )
 }

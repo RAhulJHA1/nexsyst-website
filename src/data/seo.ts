@@ -9,14 +9,14 @@ export function buildJsonLd(pagePath = "/") {
   const organization = {
     "@type": "Organization",
     "@id": `${brand.url}/#organization`,
-    name: "NexSyst",
-    legalName: "NexSyst",
+    name: "Nexsyst",
+    legalName: "Nexsyst",
     alternateName: [
       "Nexsyst",
       "Nex Syst",
       "NEXSYST",
-      "NexSyst Software",
-      "NexSyst Official",
+      "Nexsyst Software",
+      "Nexsyst Official",
       "nexsyst.in",
     ],
     url: brand.url,
@@ -30,22 +30,22 @@ export function buildJsonLd(pagePath = "/") {
     logo: {
       "@type": "ImageObject",
       url: `${brand.url}/nexsyst-logo.png`,
-      caption: "NexSyst logo — Smart Systems. Better Solutions. Official mark of nexsyst.in",
+      caption: "Nexsyst logo — Smart Systems. Better Solutions. Official mark of nexsyst.in",
     },
     image: `${brand.url}/nexsyst-logo.png`,
     brand: {
       "@type": "Brand",
       "@id": `${brand.url}/#brand`,
-      name: "NexSyst",
+      name: "Nexsyst",
       alternateName: ["Nexsyst", "Nex Syst", "NEXSYST"],
       slogan: brand.tagline,
       url: brand.url,
       logo: `${brand.url}/nexsyst-logo.png`,
     },
     knowsAbout: [
-      "NexSyst",
-      "NexSyst official website",
-      "NexSyst industrial software",
+      "Nexsyst",
+      "Nexsyst official website",
+      "Nexsyst industrial software",
       "Cloud services",
       "Enterprise AI and machine learning",
       "RAG retrieval-augmented generation",
@@ -65,15 +65,15 @@ export function buildJsonLd(pagePath = "/") {
     "@type": "WebSite",
     "@id": `${brand.url}/#website`,
     url: brand.url,
-    name: "NexSyst Official Website",
-    alternateName: ["NexSyst", "Nexsyst", "nexsyst.in", "Nex Syst"],
+    name: "Nexsyst Official Website",
+    alternateName: ["Nexsyst", "Nexsyst", "nexsyst.in", "Nex Syst"],
     description:
-      "Official website of NexSyst (nexsyst.in) — industrial software suite, cloud services, AI/ML, and RAG.",
+      "Official website of Nexsyst (nexsyst.in) — industrial software suite, cloud services, AI/ML, and RAG.",
     publisher: { "@id": `${brand.url}/#organization` },
     creator: { "@id": `${brand.url}/#organization` },
     copyrightHolder: { "@id": `${brand.url}/#organization` },
     inLanguage: "en",
-    copyrightNotice: "© NexSyst. All rights reserved. Official site: nexsyst.in",
+    copyrightNotice: "© Nexsyst. All rights reserved. Official site: nexsyst.in",
     potentialAction: {
       "@type": "SearchAction",
       target: {
@@ -90,8 +90,8 @@ export function buildJsonLd(pagePath = "/") {
     url: pageUrl,
     name:
       pagePath === "/" || pagePath === ""
-        ? "NexSyst | Official Website — nexsyst.in"
-        : `NexSyst | ${pagePath.replace(/^\//, "")}`,
+        ? "Nexsyst | Official Website — nexsyst.in"
+        : `Nexsyst | ${pagePath.replace(/^\//, "")}`,
     description: brand.description,
     isPartOf: { "@id": `${brand.url}/#website` },
     about: [
@@ -112,8 +112,8 @@ export function buildJsonLd(pagePath = "/") {
   const software = {
     "@type": "SoftwareApplication",
     "@id": `${brand.url}/#software`,
-    name: "NexSyst",
-    alternateName: ["NexSyst Suite", "NexSyst Software", "Nexsyst"],
+    name: "Nexsyst",
+    alternateName: ["Nexsyst Suite", "Nexsyst Software", "Nexsyst"],
     applicationCategory: "BusinessApplication",
     applicationSubCategory: "Industrial / Manufacturing Software",
     operatingSystem: "Web",
@@ -125,9 +125,9 @@ export function buildJsonLd(pagePath = "/") {
       availability: "https://schema.org/InStock",
       price: "0",
       priceCurrency: "USD",
-      description: "Contact NexSyst for pricing and demo via the official website nexsyst.in",
+      description: "Contact Nexsyst for pricing and demo via the official website nexsyst.in",
     },
-    featureList: [...products.map((p) => `NexSyst ${p.name}`), ...platformModules.map((m) => `NexSyst ${m.name}`)].join(
+    featureList: [...products.map((p) => `Nexsyst ${p.name}`), ...platformModules.map((m) => `Nexsyst ${m.name}`)].join(
       ", ",
     ),
     provider: { "@id": `${brand.url}/#organization` },
@@ -137,11 +137,11 @@ export function buildJsonLd(pagePath = "/") {
   const productList = {
     "@type": "ItemList",
     "@id": `${brand.url}/#products`,
-    name: "NexSyst industrial software products",
+    name: "Nexsyst industrial software products",
     itemListElement: products.map((p, i) => ({
       "@type": "ListItem",
       position: i + 1,
-      name: `NexSyst ${p.name}`,
+      name: `Nexsyst ${p.name}`,
       url: `${brand.url}/products/${p.id}`,
       description: p.answer,
     })),
@@ -150,7 +150,7 @@ export function buildJsonLd(pagePath = "/") {
   const serviceList = {
     "@type": "ItemList",
     "@id": `${brand.url}/#services`,
-    name: "NexSyst IT and industrial software services",
+    name: "Nexsyst IT and industrial software services",
     itemListElement: services.map((s, i) => ({
       "@type": "ListItem",
       position: i + 1,
@@ -163,11 +163,11 @@ export function buildJsonLd(pagePath = "/") {
   const appList = {
     "@type": "ItemList",
     "@id": `${brand.url}/#apps`,
-    name: "NexSyst suite apps — plant and business",
+    name: "Nexsyst suite apps — plant and business",
     itemListElement: products.map((p, i) => ({
       "@type": "ListItem",
       position: i + 1,
-      name: `NexSyst ${p.name}`,
+      name: `Nexsyst ${p.name}`,
       url: `${brand.url}/products/${p.id}`,
       description: p.answer,
     })),
@@ -190,7 +190,7 @@ export function buildJsonLd(pagePath = "/") {
   const siteNav = {
     "@type": "SiteNavigationElement",
     "@id": `${brand.url}/#sitenav`,
-    name: "NexSyst primary navigation",
+    name: "Nexsyst primary navigation",
     hasPart: [
       { "@type": "WebPage", name: "Home", url: `${brand.url}/` },
       { "@type": "WebPage", name: "About", url: `${brand.url}/about` },

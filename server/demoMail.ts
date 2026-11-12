@@ -1,5 +1,5 @@
 /**
- * Server-only demo-request mailer.
+ * Server-only demo/quote-request mailer.
  * Used by Vercel `/api/demo-request` and the Vite local middleware.
  * Never import this from React/browser code.
  */
@@ -13,6 +13,10 @@ export type DemoMailInput = {
   productsInterested?: string[] | null
   message?: string | null
   preferredTime?: string | null
+  intent?: string | null
+  employeeCount?: string | null
+  timeline?: string | null
+  budgetBand?: string | null
   /** Honeypot — must be empty */
   website?: string | null
 }
@@ -24,15 +28,17 @@ export type DemoMailConfig = {
   fromName?: string
 }
 
-export type DemoMailResult = {
-  ok: true
-  sent: boolean
-  message: string
-} | {
-  ok: false
-  status: number
-  message: string
-}
+export type DemoMailResult =
+  | {
+      ok: true
+      sent: boolean
+      message: string
+    }
+  | {
+      ok: false
+      status: number
+      message: string
+    }
 
 function esc(value: string): string {
   return value
@@ -65,6 +71,9 @@ function buildHtml(input: DemoMailInput): string {
     .filter(Boolean)
     .join(", ")
 
+  const intent = clean(input.intent).toLowerCase() === "quote" ? "quote" : "demo"
+  const intentLabel = intent === "quote" ? "quotation request" : "demo request"
+
   const message = clean(input.message)
   const notes = message
     ? `<p style="margin:20px 0 0;font-size:14px;color:#374151;"><strong>Message</strong></p>
@@ -77,22 +86,26 @@ function buildHtml(input: DemoMailInput): string {
 <html><body style="margin:0;padding:24px;background:#f0fdfa;font-family:Segoe UI,Roboto,Helvetica,Arial,sans-serif;">
   <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="max-width:640px;margin:0 auto;background:#fff;border-radius:12px;overflow:hidden;border:1px solid #ccfbf1;">
     <tr><td style="background:linear-gradient(135deg,#134e4a,#0f766e);padding:24px 28px;color:#fff;">
-      <p style="margin:0;font-size:12px;letter-spacing:.12em;text-transform:uppercase;opacity:.8;">Website lead</p>
-      <p style="margin:8px 0 0;font-size:22px;font-weight:700;">NexSyst demo request</p>
+      <p style="margin:0;font-size:12px;letter-spacing:.12em;text-transform:uppercase;opacity:.8;">Website lead · ${esc(intent)}</p>
+      <p style="margin:8px 0 0;font-size:22px;font-weight:700;">NexSyst ${esc(intentLabel)}</p>
     </td></tr>
     <tr><td style="padding:28px;">
       <p style="margin:0;font-size:16px;">Hello <strong>Rahul</strong>,</p>
-      <p style="margin:12px 0 0;font-size:15px;color:#134e4a;">A new <strong>NexSyst demo request</strong> was submitted from the marketing website.</p>
+      <p style="margin:12px 0 0;font-size:15px;color:#134e4a;">A new <strong>NexSyst ${esc(intentLabel)}</strong> was submitted from the marketing website.</p>
       <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="margin-top:20px;border:1px solid #e5e7eb;border-radius:8px;overflow:hidden;">
+        ${row("Intent", intent)}
         ${row("Name", input.name)}
         ${row("Email", input.email)}
         ${row("Phone", input.phone)}
         ${row("Company", input.company)}
         ${row("Job title", input.jobTitle)}
         ${row("Products interested", products)}
+        ${row("Approx. employees / users", input.employeeCount)}
+        ${row("Timeline", input.timeline)}
+        ${row("Budget band", input.budgetBand)}
         ${row("Preferred time", input.preferredTime)}
         ${row("Submitted (UTC)", new Date().toISOString().slice(0, 16).replace("T", " ") + " UTC")}
-        ${row("Source", "NexSyst website (Vercel)")}
+        ${row("Source", "NexSyst website")}
       </table>
       ${notes}
       <p style="margin:20px 0 0;font-size:14px;">Reply to <a href="mailto:${esc(email)}">${esc(email)}</a>.</p>
@@ -105,7 +118,6 @@ export async function processDemoRequest(
   input: DemoMailInput,
   config: DemoMailConfig,
 ): Promise<DemoMailResult> {
-  // Honeypot — accept silently
   if (clean(input.website)) {
     return {
       ok: true,
@@ -129,12 +141,16 @@ export async function processDemoRequest(
     return {
       ok: false,
       status: 503,
-      message: "Demo request service is temporarily unavailable. Please try again later.",
+      message: "Request service is temporarily unavailable. Please try again later.",
     }
   }
 
   const company = clean(input.company)
-  const subject = `NexSyst demo request — ${name}${company ? ` (${company})` : ""}`
+  const intent = clean(input.intent).toLowerCase() === "quote" ? "quote" : "demo"
+  const subject =
+    intent === "quote"
+      ? `NexSyst QUOTE request — ${name}${company ? ` (${company})` : ""}`
+      : `NexSyst demo request — ${name}${company ? ` (${company})` : ""}`
   const from = config.fromName
     ? `${config.fromName} <${config.fromAddress}>`
     : config.fromAddress
@@ -167,7 +183,10 @@ export async function processDemoRequest(
   return {
     ok: true,
     sent: true,
-    message: "Thank you. We received your demo request and will contact you shortly.",
+    message:
+      intent === "quote"
+        ? "Thank you. We received your quotation request and will reply within one business day."
+        : "Thank you. We received your demo request and will contact you shortly.",
   }
 }
 

@@ -15,7 +15,7 @@ export function SocialProof() {
             id="stories-heading"
             className="mt-3 max-w-2xl font-display text-[clamp(1.85rem,3.5vw,2.6rem)] font-bold leading-tight text-balance"
           >
-            Plants choose NexSyst when the cost of chaos gets higher than the cost of change
+            Plants choose Nexsyst when the cost of chaos gets higher than the cost of change
           </h2>
         </FadeItem>
 

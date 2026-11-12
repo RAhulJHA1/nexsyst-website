@@ -1,3 +1,5 @@
+export type LeadIntent = "demo" | "quote"
+
 export type DemoRequestPayload = {
   name: string
   email: string
@@ -7,6 +9,11 @@ export type DemoRequestPayload = {
   productsInterested: string[]
   message: string
   preferredTime: string
+  /** demo | quote */
+  intent?: LeadIntent
+  employeeCount?: string
+  timeline?: string
+  budgetBand?: string
   /** Honeypot — leave empty */
   website: string
 }
@@ -33,6 +40,10 @@ export async function submitDemoRequest(payload: DemoRequestPayload): Promise<De
       productsInterested: payload.productsInterested,
       message: payload.message.trim() || null,
       preferredTime: payload.preferredTime.trim() || null,
+      intent: payload.intent ?? "demo",
+      employeeCount: payload.employeeCount?.trim() || null,
+      timeline: payload.timeline?.trim() || null,
+      budgetBand: payload.budgetBand?.trim() || null,
       website: payload.website || null,
     }),
   })

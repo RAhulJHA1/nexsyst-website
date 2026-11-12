@@ -19,7 +19,7 @@ export function Platform() {
             Everything around the plant — sales, supply, people, projects
           </h2>
           <p className="mt-4 max-w-2xl text-lg leading-relaxed text-muted">
-            Like a full business suite, NexSyst includes the apps your office and floor teams already need —
+            Like a full business suite, Nexsyst includes the apps your office and floor teams already need —
             integrated with plant products so data never stops at the control room door.
           </p>
         </FadeItem>

@@ -1,12 +1,9 @@
 import { useEffect } from "react"
 import { Outlet, useLocation } from "react-router-dom"
 import { Seo } from "../components/Seo"
-import { ScrollProgress } from "../components/Motion"
 import { Nav } from "../components/Nav"
 import { Footer } from "../components/Footer"
-import { StickyBuyBar } from "../components/StickyBuyBar"
-import { SmoothScroll } from "../components/SmoothScroll"
-import { GlowCursor } from "../components/GlowCursor"
+import { SmoothScroll, scrollPageTo } from "../components/SmoothScroll"
 
 function ScrollToTop() {
   const { pathname, hash } = useLocation()
@@ -16,11 +13,12 @@ function ScrollToTop() {
       const id = hash.replace("#", "")
       const el = document.getElementById(id)
       if (el) {
-        el.scrollIntoView({ behavior: "smooth", block: "start" })
+        const top = el.getBoundingClientRect().top + window.scrollY - 72
+        scrollPageTo(Math.max(0, top))
         return
       }
     }
-    window.scrollTo(0, 0)
+    scrollPageTo(0, true)
   }, [pathname, hash])
 
   return null
@@ -28,24 +26,21 @@ function ScrollToTop() {
 
 export function SiteLayout() {
   return (
-    <div className="min-h-svh bg-brand text-ink">
+    <div className="min-h-svh bg-black text-white">
       <Seo />
       <SmoothScroll />
-      <GlowCursor />
       <ScrollToTop />
       <a
         href="#main"
-        className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[70] focus:rounded-md focus:bg-accent focus:px-4 focus:py-2 focus:text-brand"
+        className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[70] focus:rounded-full focus:bg-[#3d7eff] focus:px-4 focus:py-2 focus:text-white"
       >
         Skip to content
       </a>
-      <ScrollProgress />
       <Nav />
       <main id="main">
         <Outlet />
       </main>
       <Footer />
-      <StickyBuyBar />
     </div>
   )
 }

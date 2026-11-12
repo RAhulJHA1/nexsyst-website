@@ -1,6 +1,6 @@
-# NexSyst Website
+# Nexsyst Website
 
-Standalone marketing site — **separate from the NexSyst CRM app**. Deploy this `website/` folder as its own Vercel project.
+Standalone marketing site for the **Nexsyst ERP** platform — separate from the Nexsyst CRM/ERP app. Deploy this `website/` folder as its own Vercel project.
 
 ## Run locally
 
@@ -12,6 +12,19 @@ npm run dev
 ```
 
 Opens at [http://localhost:5174](http://localhost:5174).
+
+From the monorepo root you can also run:
+
+```bash
+npm run website
+```
+
+Optional client env (safe to expose):
+
+| Name | Purpose |
+|------|---------|
+| `VITE_APP_LOGIN_URL` | Login button target (defaults to production app login) |
+| `VITE_APP_TRIAL_URL` | Free-trial CTA (`/contact` by default) |
 
 The demo form posts to `/api/demo-request`. Locally, Vite middleware handles it using secrets from `.env.local` (no `VITE_` prefix).
 
@@ -25,12 +38,10 @@ The demo form posts to `/api/demo-request`. Locally, Vite middleware handles it 
 |------|---------|--------|
 | `RESEND_API_KEY` | `re_…` | **Server only** — never use `VITE_` |
 | `RESEND_FROM_ADDRESS` | `noreply@nexsyst.in` | Verified sender in Resend |
-| `RESEND_FROM_NAME` | `NexSyst` | Optional |
+| `RESEND_FROM_NAME` | `Nexsyst` | Optional |
 | `DEMO_NOTIFY_EMAIL` | `info@nexsyst.in` | Inbox for leads |
 
 4. Deploy. Form → `POST /api/demo-request` (Vercel serverless) → email via Resend.
-
-Secrets never ship in the JS bundle. Only names without the `VITE_` prefix stay on the server.
 
 ## Build
 
@@ -41,8 +52,11 @@ npm run preview
 
 ## Contents
 
-- **Products** — Energy Management, Alarm Management, Audit Trail, QC Log Book, Batch Report, OEE
-- **Platform** — CRM, PO, Inventory, Assets, Projects, HR/Payroll, Expense, Gate Pass
-- **Services** — Cloud, AI/ML for enterprise, RAG, industrial software, OT–IT, digital transformation, AMC, turnkey
-- **SEO / AEO** — meta, OG, JSON-LD, FAQ
-- **Contact** — Vercel serverless + Resend (self-contained)
+Conversion-focused ERP marketing site (patterns from Zoho One / Sage / mid-market ERP):
+
+- Problem-led hero + product shell preview
+- Proof, week-in-life story, modules, comparison table, ROI
+- **Request a quotation** (`/quote`) + demo (`/contact`) paths
+- Sticky quote bar, inline quote form, pricing drivers
+- Buyer FAQ, security/trust, Privacy + Terms
+- Demo/quote email via `/api/demo-request` (Resend)
